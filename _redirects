@@ -1,0 +1,6 @@
+# Redirecciones Cloudflare Pages — Mariscos Muelle 27
+# Formato: /origen /destino codigo-http
+
+# Red de seguridad: si por error alguien sube un .html suelto,
+# redirige a la versión canónica con slash.
+# (Cloudflare Pages ya hace esto automáticamente para carpeta/index.html)

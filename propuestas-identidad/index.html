@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuestas de Identidad Visual · Mariscos Muelle 27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A1628;
+      --bg-light: #142236;
+      --text: #F5F1EA;
+      --text-dim: rgba(245, 241, 234, 0.65);
+      --accent: #F2B84B;
+      --border: rgba(245, 241, 234, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse at top left, rgba(10, 77, 104, 0.25), transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(232, 93, 62, 0.15), transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    header {
+      padding: 3rem 0 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--accent);
+      border-radius: 100px;
+      margin-bottom: 1.8rem;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .intro {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .mix-note {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      text-align: left;
+      margin-top: 2.5rem;
+      padding: 1.8rem 2rem;
+      background: linear-gradient(135deg, rgba(242, 184, 75, 0.08), rgba(242, 184, 75, 0.03));
+      border: 1px solid rgba(242, 184, 75, 0.35);
+      border-radius: 14px;
+    }
+
+    .mix-note-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .mix-note-body strong {
+      display: block;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .mix-note-body p {
+      font-size: 0.98rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 640px) {
+      .mix-note { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+    }
+
+    .proposals {
+      padding: 3rem 0 6rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .proposal-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proposal-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+
+    .preview {
+      aspect-ratio: 4 / 3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Preview 1: Muelle Clásico */
+    .preview-1 {
+      background: #FAF7F2;
+    }
+
+    .preview-1 .title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.6rem;
+      color: #062E3F;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .preview-1 .title em {
+      font-style: italic;
+      color: #E85D3E;
+      display: block;
+      font-size: 0.85em;
+    }
+
+    .preview-1 .palette-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 24px;
+    }
+
+    .preview-1 .palette-strip div {
+      flex: 1;
+    }
+
+    /* Preview 2: Bitácora */
+    .preview-2 {
+      background:
+        radial-gradient(ellipse 200px 80px at 30% 30%, rgba(42, 24, 16, 0.3), transparent),
+        radial-gradient(ellipse 300px 120px at 70% 70%, rgba(74, 44, 26, 0.35), transparent),
+        linear-gradient(135deg, #7A4E28 0%, #6B4423 50%, #8B5A2B 100%);
+      position: relative;
+    }
+
+    .preview-2::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(42, 24, 16, 0.1) 0px,
+          rgba(42, 24, 16, 0.1) 2px,
+          transparent 2px,
+          transparent 8px
+        );
+      pointer-events: none;
+    }
+
+    .preview-2 .parchment {
+      background: #F5E6D3;
+      padding: 1.5rem 2rem;
+      border: 1px solid #4A2C1A;
+      box-shadow: 0 0 0 4px #6B4423, 0 0 0 5px #C8A063, 0 10px 30px rgba(0,0,0,0.5);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-2 .parchment .title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      color: #0F1A2E;
+      line-height: 1;
+    }
+
+    .preview-2 .parchment .title em {
+      color: #8B2E1F;
+      font-style: italic;
+      display: block;
+    }
+
+    .preview-2 .palette-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 24px;
+      z-index: 2;
+    }
+
+    .preview-2 .palette-strip div {
+      flex: 1;
+    }
+
+    /* Preview 3: Pacífico Moderno */
+    .preview-3 {
+      background: #FAFAF7;
+      position: relative;
+    }
+
+    .preview-3 .content {
+      text-align: left;
+      width: 100%;
+    }
+
+    .preview-3 .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #D94436;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.6rem;
+    }
+
+    .preview-3 .title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 3rem;
+      color: #0D1F35;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+
+    .preview-3 .title em {
+      color: #D94436;
+      font-style: italic;
+    }
+
+    .preview-3 .palette-strip {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 24px;
+    }
+
+    .preview-3 .palette-strip div {
+      flex: 1;
+    }
+
+    .card-body {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-num {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .card-body h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.9rem;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card-body > p {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .specs {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 1.8rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .specs strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .specs-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      align-items: center;
+    }
+
+    .specs-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .specs-row strong {
+      min-width: 80px;
+      margin-bottom: 0;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .view-btn {
+      display: block;
+      text-align: center;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .view-btn:hover {
+      background: #FDD371;
+      transform: translateY(-2px);
+    }
+
+    .instructions {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .instructions h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .instructions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .instructions li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-dim);
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    .instructions li:last-child { border-bottom: none; }
+
+    .instructions li::before {
+      content: counter(step);
+      counter-increment: step;
+      position: absolute;
+      left: 0;
+      top: 0.8rem;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .instructions ul {
+      counter-reset: step;
+    }
+
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .proposals { grid-template-columns: 1fr; gap: 1.5rem; }
+      .container { padding: 0 1.5rem; }
+      .intro { padding: 3rem 0 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="badge">Propuestas de Identidad · Abril 2026</div>
+      <h1>
+        Tres caminos para<br>
+        <em>Mariscos Muelle 27.</em>
+      </h1>
+      <p class="subtitle">
+        Hola. Preparamos tres direcciones visuales distintas para tu nuevo sitio web.
+        Cada una es un camino completo: tipografía, paleta de colores y personalidad.
+        Tú eliges cuál representa mejor a tu marca.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="intro">
+        <p>
+          Las tres propuestas son prototipos reales y navegables — no son bocetos ni mockups
+          estáticos. Puedes hacer clic en cada una, recorrerla de arriba a abajo y ver exactamente
+          cómo se sentiría el sitio final. Todas respetan tu dirección, tu teléfono y están
+          conectadas a tu ficha de Google Maps.
+        </p>
+        <p>
+          No hay una "correcta". Las tres están diseñadas con el mismo rigor estratégico.
+          La decisión es 100% tuya: elige la que conecte mejor con la marca que quieres
+          mostrar al mundo.
+        </p>
+        <div class="mix-note">
+          <div class="mix-note-icon">✦</div>
+          <div class="mix-note-body">
+            <strong>¿Te gustan partes de dos propuestas distintas?</strong>
+            <p>
+              Puedes combinarlas. Por ejemplo: si te encanta el estilo visual y los colores
+              de la propuesta 2, pero prefieres la tipografía de la propuesta 1, podemos
+              tomar lo mejor de cada una y fusionarlas en una identidad única para ti.
+              Solo dinos qué elementos te gustaron más de cada opción y nosotros nos
+              encargamos del resto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="proposals">
+        <!-- PROPUESTA 1 -->
+        <article class="proposal-card">
+          <div class="preview preview-1">
+            <div class="title">
+              Marisquería en
+              <em>Querétaro</em>
+            </div>
+            <div class="palette-strip">
+              <div style="background: #0A4D68;"></div>
+              <div style="background: #E85D3E;"></div>
+              <div style="background: #F2B84B;"></div>
+              <div style="background: #FAF7F2;"></div>
+              <div style="background: #062E3F;"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-num">Opción N.º 01</div>
+            <h2>Muelle Clásico</h2>
+            <p>
+              Conserva y refina la identidad que ya tienes en tu tríptico: azul turquesa
+              profundo, coral del cangrejo y amarillo cítrico. Una dirección cálida,
+              elegante y familiar — la opción más fiel a lo que tu marca ya es hoy.
+            </p>
+            <div class="specs">
+              <div class="specs-row">
+                <strong>Títulos</strong>
+                <span>Fraunces</span>
+              </div>
+              <div class="specs-row">
+                <strong>Texto</strong>
+                <span>DM Sans</span>
+              </div>
+              <div class="specs-row">
+                <strong>Sensación</strong>
+                <span>Cálida, clásica, familiar</span>
+              </div>
+            </div>
+            <a href="./01-muelle-clasico.html" class="view-btn">Ver esta propuesta →</a>
+          </div>
+        </article>
+
+        <!-- PROPUESTA 2 -->
+        <article class="proposal-card">
+          <div class="preview preview-2">
+            <div class="parchment">
+              <div class="title">
+                Bitácora del
+                <em>Capitán</em>
+              </div>
+            </div>
+            <div class="palette-strip">
+              <div style="background: #6B4423;"></div>
+              <div style="background: #F5E6D3;"></div>
+              <div style="background: #0F1A2E;"></div>
+              <div style="background: #C8A063;"></div>
+              <div style="background: #8B2E1F;"></div>
+              <div style="background: #D4A574;"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-num">Opción N.º 02</div>
+            <h2>Bitácora del Capitán</h2>
+            <p>
+              El sitio completo se siente como estar dentro del camarote de un barco:
+              fondo de madera cálida, paneles de pergamino, detalles en latón y tinta marina.
+              La dirección más atrevida y memorable — ningún restaurante en Querétaro
+              se ve así.
+            </p>
+            <div class="specs">
+              <div class="specs-row">
+                <strong>Títulos</strong>
+                <span>DM Serif Display</span>
+              </div>
+              <div class="specs-row">
+                <strong>Texto</strong>
+                <span>Lora + Work Sans</span>
+              </div>
+              <div class="specs-row">
+                <strong>Sensación</strong>
+                <span>Náutica, aventura, narrativa</span>
+              </div>
+            </div>
+            <a href="./02-bitacora-capitan.html" class="view-btn">Ver esta propuesta →</a>
+          </div>
+        </article>
+
+        <!-- PROPUESTA 3 -->
+        <article class="proposal-card">
+          <div class="preview preview-3">
+            <div class="content">
+              <div class="label">Mariscos Muelle 27</div>
+              <div class="title">
+                Del mar<br>
+                a tu <em>mesa.</em>
+              </div>
+            </div>
+            <div class="palette-strip">
+              <div style="background: #D94436;"></div>
+              <div style="background: #1E3A5F;"></div>
+              <div style="background: #84A98C;"></div>
+              <div style="background: #F4C430;"></div>
+              <div style="background: #F5F1EA;"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-num">Opción N.º 03</div>
+            <h2>Pacífico Moderno</h2>
+            <p>
+              Una dirección limpia, moderna y con mucho aire — como una revista premium
+              de gastronomía internacional. Ladrillo vibrante, tinta marina, aguacate y
+              azafrán. Ideal si buscas proyectar una marca joven, cosmopolita y con
+              presencia contemporánea.
+            </p>
+            <div class="specs">
+              <div class="specs-row">
+                <strong>Títulos</strong>
+                <span>Instrument Serif</span>
+              </div>
+              <div class="specs-row">
+                <strong>Texto</strong>
+                <span>Inter</span>
+              </div>
+              <div class="specs-row">
+                <strong>Sensación</strong>
+                <span>Moderna, editorial, vibrante</span>
+              </div>
+            </div>
+            <a href="./03-pacifico-moderno.html" class="view-btn">Ver esta propuesta →</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="instructions">
+        <h3>Cómo elegir tu identidad</h3>
+        <ul>
+          <li>Tómate tu tiempo con cada una. Haz clic en "Ver esta propuesta" y recórrela completa, de arriba a abajo, como si fueras un cliente visitando tu sitio por primera vez.</li>
+          <li>Fíjate especialmente en cómo se siente el hero principal, la sección de la Hamburguesa Muelle y el bloque del mapa. Son los momentos donde cada dirección muestra mejor su personalidad.</li>
+          <li>Pregúntate cuál conecta más con la imagen que quieres que tengan tus clientes al pensar en Mariscos Muelle 27. ¿Te imaginas esta identidad impresa en un menú, en un uniforme, en redes sociales?</li>
+          <li>No necesitas justificar tu elección técnicamente — confía en tu intuición como dueño de la marca. Todas las opciones están pensadas para funcionar bien en SEO y en conversión.</li>
+          <li>Cuando tengas tu favorita, avísanos y comenzamos a construir el sitio web completo sobre esa dirección.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Propuestas preparadas por Raptor Marketer para Mariscos Muelle 27 · Abril 2026
+    </div>
+  </footer>
+
+</body>
+</html>

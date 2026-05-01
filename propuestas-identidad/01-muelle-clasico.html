@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta 1 · Muelle Clásico — Mariscos Muelle 27</title>
+<meta name="description" content="Prototipo de identidad visual 'Muelle Clásico' para Mariscos Muelle 27. Fresca, marítima, basada en el logo y paleta del tríptico actual.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #FAF7F2;
+  --bg-alt: #F0EADF;
+  --primary: #0A4D68;
+  --primary-dark: #062E3F;
+  --accent: #E85D3E;
+  --accent-soft: #F4A26B;
+  --gold: #F2B84B;
+  --text: #1A1A1A;
+  --text-muted: #5A5A5A;
+  --line: #D9D0C2;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ========== HEADER ========== */
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(10,77,104,0.2);
+}
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+.brand-name span { color: var(--accent); }
+nav ul { display: flex; gap: 28px; list-style: none; }
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 15px;
+  transition: color .2s;
+}
+nav a:hover { color: var(--accent); }
+
+/* ========== HERO ========== */
+.hero {
+  padding: 90px 0 100px;
+  background:
+    radial-gradient(ellipse at top right, rgba(242,184,75,0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(10,77,104,0.08) 0%, transparent 70%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(232,93,62,0.12);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(42px, 5.5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-variation-settings: "SOFT" 40, "WONK" 1;
+}
+h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "SOFT" 80, "WONK" 1;
+}
+.hero-sub {
+  font-size: 21px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  border: 2px solid transparent;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(232,93,62,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,93,62,0.45); }
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-ghost:hover { background: var(--primary); color: #fff; }
+
+.hero-visual {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, var(--gold) 0%, var(--accent) 45%, var(--primary) 100%);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 900;
+  box-shadow: 0 30px 80px rgba(10,77,104,0.3), inset 0 -20px 60px rgba(0,0,0,0.2);
+  position: relative;
+}
+.hero-visual::after {
+  content: 'Mariscos Frescos';
+  position: absolute;
+  bottom: 18%;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ========== SIGNATURE DISH ========== */
+.signature {
+  padding: 100px 0;
+  background: var(--primary);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.signature::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(242,184,75,0.15), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(232,93,62,0.15), transparent 40%);
+}
+.signature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.signature h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.signature h2 em { color: var(--gold); font-style: italic; }
+.signature p { font-size: 18px; opacity: 0.85; line-height: 1.65; margin-bottom: 28px; max-width: 460px; }
+.price-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--accent);
+  border-radius: 100px;
+  font-weight: 700;
+}
+.price-tag strong { font-family: var(--font-display); font-size: 28px; }
+.dish-visual {
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, var(--accent-soft) 0%, var(--accent) 50%, #8B3A23 100%);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* ========== CARTA ========== */
+.carta { padding: 100px 0; }
+.section-head { text-align: center; margin-bottom: 60px; }
+.section-head .eyebrow { background: rgba(10,77,104,0.08); color: var(--primary); }
+.section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 52px);
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.section-head h2 em { font-style: italic; color: var(--accent); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: transform .3s, box-shadow .3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(10,77,104,0.12);
+  border-color: var(--accent);
+}
+.card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--bg-alt);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.card .price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+
+/* ========== UBICACION ========== */
+.location {
+  padding: 100px 0;
+  background: var(--bg-alt);
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+  align-items: center;
+}
+.location h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 44px;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.location h2 em { color: var(--accent); font-style: italic; }
+.nap-card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  margin-top: 24px;
+}
+.nap-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.nap-row:last-child { border: none; }
+.nap-row strong { color: var(--primary); font-weight: 700; min-width: 90px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+.nap-row span { color: var(--text); font-size: 15px; }
+.map-embed {
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10,77,104,0.2);
+  border: 4px solid #fff;
+}
+.map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* ========== IDENTIDAD (showcase) ========== */
+.identity {
+  padding: 100px 0;
+  background: var(--primary-dark);
+  color: #fff;
+}
+.identity h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 44px;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.identity .lede { text-align: center; opacity: 0.75; margin-bottom: 60px; font-size: 18px; }
+.identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.id-block h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+.palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.swatch {
+  aspect-ratio: 1;
+  border-radius: 14px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.type-specimen { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; margin-top: 20px; }
+.type-specimen:first-child { border: none; padding-top: 0; margin-top: 0; }
+.type-specimen .label { font-size: 12px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.type-display { font-family: var(--font-display); font-size: 44px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.type-display em { font-style: italic; color: var(--gold); }
+.type-body { font-family: var(--font-body); font-size: 16px; line-height: 1.55; opacity: 0.85; }
+
+/* ========== FOOTER ========== */
+footer { background: var(--primary-dark); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
+footer strong { color: #fff; font-family: var(--font-display); }
+
+@media (max-width: 900px) {
+  nav { display: none; }
+  .hero-grid, .signature-grid, .location-grid, .identity-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 60px 0 70px; }
+  .signature, .carta, .location, .identity { padding: 70px 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="brand-logo">M27</div>
+      <div class="brand-name">Mariscos <span>Muelle 27</span></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#carta">Carta</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Jardines del Cimatario · Querétaro</span>
+      <h1>Marisquería en <em>Querétaro</em></h1>
+      <p class="hero-sub">Mariscos frescos estilo Sinaloa en el corazón del sur de la ciudad. Aguachiles, ceviches y la inconfundible Hamburguesa Muelle.</p>
+      <div class="cta-row">
+        <a href="#contacto" class="btn btn-primary">📞 Llamar al 442 808 5907</a>
+        <a href="#carta" class="btn btn-ghost">Ver nuestra carta</a>
+      </div>
+    </div>
+    <div class="hero-visual">27</div>
+  </div>
+</section>
+
+<section class="signature">
+  <div class="container signature-grid">
+    <div>
+      <span class="eyebrow" style="background:rgba(242,184,75,0.2);color:var(--gold);">La Firma de la Casa</span>
+      <h2>La <em>Hamburguesa Muelle</em></h2>
+      <p>El único platillo que lleva el nombre de la casa. Pan artesanal, camarón al grill, aderezo secreto del chef y frescura del Pacífico en cada mordida.</p>
+      <div class="price-tag">Desde <strong>$189</strong></div>
+    </div>
+    <div class="dish-visual">Hamburguesa<br>Muelle</div>
+  </div>
+</section>
+
+<section class="carta" id="carta">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestra Carta</span>
+      <h2>Lo mejor del Pacífico, hecho en <em>Querétaro</em></h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🌶️</div>
+        <h3>Aguachiles</h3>
+        <div class="price">Desde $165</div>
+        <p>Verde, negro y tatemado. Camarón fresco curtido en limón y chile del día.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🍋</div>
+        <h3>Ceviches &amp; Tostadas</h3>
+        <div class="price">Desde $120</div>
+        <p>Tostadas cargadas, ceviche de pescado y cócteles vuelve a la vida.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🦐</div>
+        <h3>Camarones</h3>
+        <div class="price">Desde $189</div>
+        <p>A la diabla, empanizados, al coco, zarandeados. Como te gusten.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🐟</div>
+        <h3>Pescados &amp; Mojarras</h3>
+        <div class="price">Desde $210</div>
+        <p>Mojarra frita, filete empapelado y pescado zarandeado al carbón.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location" id="ubicacion">
+  <div class="container location-grid">
+    <div>
+      <span class="eyebrow">Dónde Estamos</span>
+      <h2>En el corazón de <em>Jardines del Cimatario</em></h2>
+      <p style="color:var(--text-muted);font-size:17px;">Abiertos de martes a domingo con estacionamiento, ambiente familiar y la terraza más fresca del sur de Querétaro.</p>
+      <div class="nap-card">
+        <div class="nap-row"><strong>Dirección</strong><span>Jardín de Alcatraz s/n, Jardines del Cimatario, Querétaro</span></div>
+        <div class="nap-row"><strong>Teléfono</strong><span>442 808 5907</span></div>
+        <div class="nap-row"><strong>Horario</strong><span>Martes a Domingo · 9:00 am – 6:00 pm</span></div>
+      </div>
+    </div>
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.0082132130615!2d-100.38977962582055!3d20.54684485515344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d34500183f1ca5%3A0xcad72d3045025a19!2sMuelle%2027!5e0!3m2!1ses!2smx!4v1776196787773!5m2!1ses!2smx" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Mariscos Muelle 27 en Jardines del Cimatario, Querétaro"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="identity">
+  <div class="container">
+    <h2>Identidad Visual · Muelle Clásico</h2>
+    <p class="lede">Respeta y refina el logotipo existente del cliente. Paleta coherente con el tríptico y el medallón del crustáceo.</p>
+    <div class="identity-grid">
+      <div class="id-block">
+        <h3>Paleta de colores</h3>
+        <div class="palette">
+          <div class="swatch" style="background:#0A4D68;color:#FFF;">#0A4D68</div>
+          <div class="swatch" style="background:#E85D3E;color:#FFF;">#E85D3E</div>
+          <div class="swatch" style="background:#F2B84B;color:#1A1A1A;">#F2B84B</div>
+          <div class="swatch" style="background:#FAF7F2;color:#1A1A1A;border:1px solid rgba(255,255,255,0.15);">#FAF7F2</div>
+          <div class="swatch" style="background:#062E3F;color:#FFF;border:1px solid rgba(255,255,255,0.15);">#062E3F</div>
+        </div>
+        <p style="margin-top:18px;opacity:0.7;font-size:14px;line-height:1.6;">Azul profundo del Pacífico como ancla, coral del crustáceo del logo como acento vivo, amarillo cítrico como toque de frescura. Blanco hueso para respirar.</p>
+      </div>
+      <div class="id-block">
+        <h3>Tipografías</h3>
+        <div class="type-specimen">
+          <div class="label">Display · Fraunces</div>
+          <div class="type-display">Aguachile <em>fresco</em></div>
+        </div>
+        <div class="type-specimen">
+          <div class="label">Cuerpo · DM Sans</div>
+          <div class="type-body">Camarón del Pacífico curtido en limón y chile del día, servido sobre tostada crujiente con un toque de aguacate.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="container">
+    <strong>Mariscos Muelle 27</strong> · Jardín de Alcatraz s/n, Jardines del Cimatario, Querétaro<br>
+    442 808 5907 · Martes a Domingo · 9:00 am – 6:00 pm<br>
+    <span style="opacity:0.5;font-size:12px;margin-top:12px;display:inline-block;">Propuesta 1 de 3 · Identidad "Muelle Clásico" · Prototipo para Raptor Marketer</span>
+  </div>
+</footer>
+
+</body>
+</html>

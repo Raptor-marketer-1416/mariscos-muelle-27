@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta 3 · Pacífico Moderno — Mariscos Muelle 27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================
+       PACÍFICO MODERNO — Editorial Minimalista
+       Concepto: Revista gastronómica, arte tipográfico,
+       contraste atrevido, blanco espacial, acentos vibrantes.
+       ========================================== */
+
+    :root {
+      --white:    #FFFFFF;
+      --off:      #FAFAF7;
+      --cream:    #F5F1EA;
+      --brick:    #D94436;
+      --brick-dark: #B8331F;
+      --ink:      #1E3A5F;
+      --ink-deep: #0D1F35;
+      --avocado:  #84A98C;
+      --saffron:  #F4C430;
+      --charcoal: #1A1A1A;
+      --gray:     #6B6B6B;
+      --gray-lt:  #E5E5E0;
+
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--off);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ==========================================
+       HEADER
+       ========================================== */
+    header {
+      padding: 1.5rem 0;
+      background: var(--off);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gray-lt);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--brick);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .logo-text em {
+      color: var(--brick);
+      font-style: italic;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--brick); }
+
+    .cta-btn {
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.75rem 1.6rem;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+
+    .cta-btn:hover { background: var(--brick); }
+
+    /* ==========================================
+       HERO — Big editorial statement
+       ========================================== */
+    .hero {
+      padding: 5rem 0 6rem;
+      position: relative;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brick);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: var(--brick);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      color: var(--ink-deep);
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--gray-lt);
+      margin-top: 3rem;
+    }
+
+    .hero-meta-item .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-meta-item .value {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    /* ==========================================
+       SIGNATURE DISH
+       ========================================== */
+    .signature {
+      background: var(--ink-deep);
+      color: var(--white);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signature::before {
+      content: "";
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: var(--brick);
+      border-radius: 50%;
+      opacity: 0.15;
+    }
+
+    .signature::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 400px;
+      height: 400px;
+      background: var(--saffron);
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .signature-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--saffron);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 1.5rem;
+    }
+
+    .signature-label::before {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: var(--saffron);
+    }
+
+    .signature h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .signature h2 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .signature p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .price-tag {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+    }
+
+    .price-tag .currency {
+      font-size: 1.3rem;
+      color: var(--saffron);
+    }
+
+    .price-tag .amount {
+      font-size: 3.5rem;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .price-tag .unit {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--gray);
+      margin-left: 0.5rem;
+    }
+
+    .dish-visual {
+      position: relative;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dish-circle {
+      width: 90%;
+      height: 90%;
+      background: linear-gradient(135deg, var(--brick), var(--brick-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 40px 80px rgba(217, 68, 54, 0.4);
+    }
+
+    .dish-circle::before {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .dish-number {
+      font-family: var(--font-display);
+      font-size: 10rem;
+      color: var(--white);
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .dish-badge {
+      position: absolute;
+      top: 5%;
+      right: 0;
+      background: var(--saffron);
+      color: var(--ink-deep);
+      padding: 1.2rem 1.5rem;
+      border-radius: 50%;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      text-align: center;
+      line-height: 1.1;
+      transform: rotate(12deg);
+      width: 110px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ==========================================
+       CARTA
+       ========================================== */
+    .carta-section {
+      padding: 6rem 0;
+      background: var(--off);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .section-header .label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brick);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--ink-deep);
+      letter-spacing: -0.02em;
+    }
+
+    .section-header h2 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .menu-card {
+      background: var(--white);
+      border: 1px solid var(--gray-lt);
+      padding: 2.5rem 2rem;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .menu-card:hover {
+      border-color: var(--brick);
+      transform: translateY(-5px);
+    }
+
+    .menu-card-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--brick);
+      margin-bottom: 1.5rem;
+    }
+
+    .menu-card h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--ink-deep);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .menu-card p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .menu-card-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .menu-card:hover .menu-card-link {
+      color: var(--brick);
+    }
+
+    .menu-card-link span {
+      transition: transform 0.2s;
+    }
+
+    .menu-card:hover .menu-card-link span {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================
+       UBICACIÓN
+       ========================================== */
+    .location {
+      background: var(--cream);
+      padding: 6rem 0;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .location-info .label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brick);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+
+    .location-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1;
+      color: var(--ink-deep);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .location-info h2 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .location-info p {
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .nap-box {
+      background: var(--white);
+      border-left: 4px solid var(--brick);
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .nap-box strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--ink-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .nap-box p {
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .map-wrapper {
+      background: var(--white);
+      padding: 1rem;
+      box-shadow: 0 30px 70px rgba(30, 58, 95, 0.15);
+    }
+
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: 0;
+    }
+
+    /* ==========================================
+       IDENTIDAD — Showcase
+       ========================================== */
+    .identity-showcase {
+      background: var(--white);
+      padding: 6rem 0;
+      border-top: 1px solid var(--gray-lt);
+      border-bottom: 1px solid var(--gray-lt);
+    }
+
+    .identity-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .identity-header .label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brick);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 1rem;
+    }
+
+    .identity-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      color: var(--ink-deep);
+      letter-spacing: -0.02em;
+    }
+
+    .identity-header h2 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .swatch {
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--gray-lt);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.2rem;
+    }
+
+    .swatch-color {
+      flex: 1;
+      border-radius: 2px;
+    }
+
+    .swatch-info {
+      margin-top: 1rem;
+    }
+
+    .swatch-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--ink-deep);
+      margin-bottom: 0.2rem;
+    }
+
+    .swatch-hex {
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .type-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--gray-lt);
+    }
+
+    .type-block {
+      padding: 2.5rem;
+      border: 1px solid var(--gray-lt);
+    }
+
+    .type-block .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--brick);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.6rem;
+    }
+
+    .type-block .name {
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .type-display-big {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 8vw, 6.5rem);
+      line-height: 0.9;
+      color: var(--ink-deep);
+      letter-spacing: -0.02em;
+    }
+
+    .type-display-big em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .type-body-sample {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--charcoal);
+      margin-top: 1rem;
+    }
+
+    .weights {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .weight {
+      font-size: 0.92rem;
+      padding: 0.4rem 1rem;
+      background: var(--off);
+      border: 1px solid var(--gray-lt);
+      border-radius: 100px;
+      color: var(--charcoal);
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    footer {
+      background: var(--ink-deep);
+      color: var(--white);
+      padding: 5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-brand h3 em {
+      font-style: italic;
+      color: var(--brick);
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 340px;
+    }
+
+    footer h4 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--saffron);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.2rem;
+    }
+
+    footer p, footer a {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--saffron); }
+
+    .footer-credit {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .proposal-badge {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--brick);
+      color: var(--white);
+      padding: 0.85rem 1.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      box-shadow: 0 10px 30px rgba(217, 68, 54, 0.4);
+      z-index: 200;
+    }
+
+    @media (max-width: 900px) {
+      .nav-wrapper nav, .nav-wrapper .cta-btn { display: none; }
+      .hero-meta { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .signature-grid, .section-header, .location-grid, .type-showcase, .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .menu-grid { grid-template-columns: 1fr 1fr; }
+      .palette { grid-template-columns: repeat(3, 1fr); }
+      .signature { padding: 4rem 0; }
+      .dish-number { font-size: 6rem; }
+    }
+
+    @media (max-width: 560px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .hero-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo">
+          <div class="logo-mark">M</div>
+          <div class="logo-text">Muelle <em>27</em></div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#carta">Carta</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#identidad">Identidad</a></li>
+          </ul>
+        </nav>
+        <button class="cta-btn">Reservar</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-label">Mariscos Muelle 27 · Est. 2026</div>
+        <h1>
+          Mariscos<br>
+          frescos en<br>
+          <em>Querétaro.</em>
+        </h1>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="label">Ubicación</div>
+            <div class="value">Jardines del Cimatario</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Especialidad</div>
+            <div class="value">Estilo Sinaloa</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Horario</div>
+            <div class="value">Mar–Dom · 9–18h</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Reservas</div>
+            <div class="value">442 808 5907</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE DISH -->
+    <section class="signature">
+      <div class="container">
+        <div class="signature-grid">
+          <div>
+            <div class="signature-label">Platillo firma</div>
+            <h2>La Hamburguesa <em>Muelle.</em></h2>
+            <p>
+              El único platillo que lleva el nombre de la casa. Camarón, tocino ahumado
+              y salsa de la casa entre panes brioche tostados al momento. Un homenaje
+              a quien se atreve a mezclar mundos.
+            </p>
+            <div class="price-tag">
+              <span class="currency">$</span>
+              <span class="amount">189</span>
+              <span class="unit">MXN</span>
+            </div>
+          </div>
+          <div class="dish-visual">
+            <div class="dish-circle">
+              <div class="dish-number">27</div>
+            </div>
+            <div class="dish-badge">Platillo<br>firma</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section id="carta" class="carta-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="label">Nuestra carta</div>
+            <h2>Del mar<br>a tu <em>mesa.</em></h2>
+          </div>
+          <p>
+            Cuatro capítulos sinaloenses que recorren aguachiles, ceviches, camarones
+            y pescados frescos. Cada platillo respeta la receta original y honra
+            el ingrediente principal: el mar.
+          </p>
+        </div>
+
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-num">Nº 01</div>
+            <h3>Aguachiles</h3>
+            <p>Verde, negro y de la casa. Camarón fresco marinado con limón y chile.</p>
+            <a href="#" class="menu-card-link">Ver carta <span>→</span></a>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-num">Nº 02</div>
+            <h3>Ceviches</h3>
+            <p>Tostadas y ceviches. Pescado, camarón y mixtas con receta tradicional.</p>
+            <a href="#" class="menu-card-link">Ver carta <span>→</span></a>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-num">Nº 03</div>
+            <h3>Camarones</h3>
+            <p>A la diabla, empanizados, al coco. El rey indiscutible de la carta.</p>
+            <a href="#" class="menu-card-link">Ver carta <span>→</span></a>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-num">Nº 04</div>
+            <h3>Pescados</h3>
+            <p>Filete empapelado, mojarra frita, pescado zarandeado. Pesca del día.</p>
+            <a href="#" class="menu-card-link">Ver carta <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="location">
+      <div class="container">
+        <div class="location-grid">
+          <div class="location-info">
+            <div class="label">Visítanos</div>
+            <h2>Jardines<br>del <em>Cimatario.</em></h2>
+            <p>
+              Anclados en el corazón de la zona sur de Querétaro. Ambiente familiar,
+              estacionamiento amplio y la sazón del Pacífico esperándote.
+            </p>
+            <div class="nap-box">
+              <strong>Mariscos Muelle 27</strong>
+              <p>
+                Jardín de Alcatraz s/n<br>
+                Jardines del Cimatario, Querétaro<br>
+                442 808 5907
+              </p>
+            </div>
+          </div>
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.0082132130615!2d-100.38977962582055!3d20.54684485515344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d34500183f1ca5%3A0xcad72d3045025a19!2sMuelle%2027!5e0!3m2!1ses!2smx!4v1776196787773!5m2!1ses!2smx"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de Mariscos Muelle 27 en Jardines del Cimatario, Querétaro">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDENTIDAD SHOWCASE -->
+    <section id="identidad" class="identity-showcase">
+      <div class="container">
+        <div class="identity-header">
+          <div class="label">Propuesta de identidad N.º 3</div>
+          <h2>Pacífico <em>Moderno.</em></h2>
+        </div>
+
+        <div class="palette">
+          <div class="swatch">
+            <div class="swatch-color" style="background: var(--brick);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Ladrillo</div>
+              <div class="swatch-hex">#D94436</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: var(--ink);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Tinta</div>
+              <div class="swatch-hex">#1E3A5F</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: var(--avocado);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Aguacate</div>
+              <div class="swatch-hex">#84A98C</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: var(--saffron);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Azafrán</div>
+              <div class="swatch-hex">#F4C430</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: var(--cream); border: 1px solid var(--gray-lt);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Crema</div>
+              <div class="swatch-hex">#F5F1EA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="type-showcase">
+          <div class="type-block">
+            <div class="label">Display · Títulos</div>
+            <div class="name">Instrument Serif</div>
+            <div class="type-display-big">Aa <em>27</em></div>
+          </div>
+          <div class="type-block">
+            <div class="label">Body · Texto y UI</div>
+            <div class="name">Inter</div>
+            <p class="type-body-sample">
+              Del mar fresco a tu mesa. Una tipografía versátil, moderna y legible
+              para todos los pesos de la interfaz digital.
+            </p>
+            <div class="weights">
+              <span class="weight" style="font-weight: 400;">Regular</span>
+              <span class="weight" style="font-weight: 500;">Medium</span>
+              <span class="weight" style="font-weight: 600;">Semibold</span>
+              <span class="weight" style="font-weight: 700;">Bold</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Muelle <em>27.</em></h3>
+          <p>
+            Marisquería en Jardines del Cimatario, Querétaro.
+            Mariscos frescos estilo Sinaloa hechos con sazón honesta.
+          </p>
+        </div>
+        <div>
+          <h4>Navegar</h4>
+          <p>
+            <a href="#">Inicio</a><br>
+            <a href="#">Carta</a><br>
+            <a href="#">Nosotros</a><br>
+            <a href="#">Contacto</a>
+          </p>
+        </div>
+        <div>
+          <h4>Visítanos</h4>
+          <p>
+            Jardín de Alcatraz s/n<br>
+            Jardines del Cimatario<br>
+            Querétaro, Qro.
+          </p>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <p>
+            442 808 5907<br>
+            Mar–Dom<br>
+            9:00 – 18:00
+          </p>
+        </div>
+      </div>
+      <div class="footer-credit">
+        Propuesta 3 de 3 · Identidad "Pacífico Moderno" · Prototipo para Raptor Marketer
+      </div>
+    </div>
+  </footer>
+
+  <div class="proposal-badge">Propuesta 3 · Pacífico Moderno</div>
+
+</body>
+</html>

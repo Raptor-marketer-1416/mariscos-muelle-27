@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mariscosmuelle27.com/sitemap.xml
