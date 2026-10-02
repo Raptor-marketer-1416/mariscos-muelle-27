@@ -1,3 +1,9 @@
+# Content Signals Policy — https://contentsignals.org/
+# search=yes    : si, indexa el sitio
+# ai-input=yes  : si, usa el contenido para responder en vivo (queremos que la IA nos cite)
+# ai-train=no   : no, no entrenes modelos con este contenido
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
 User-agent: *
 Allow: /
 
