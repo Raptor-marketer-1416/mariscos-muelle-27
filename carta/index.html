@@ -20,7 +20,15 @@
   <meta property="og:url" content="https://mariscosmuelle27.com/carta/">
   <meta property="og:image" content="https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp">
 
-  <link rel="stylesheet" href="../css/styles.css?v=20260430e">
+  <link rel="stylesheet" href="../css/styles.css?v=2f82b136">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHFG2S49');</script>
+  <!-- End Google Tag Manager -->
 
   <script type="application/ld+json">
   {
@@ -35,6 +43,7 @@
       },
       {
         "@type": "Menu",
+        "@id": "https://mariscosmuelle27.com/carta/#menu",
         "name": "Carta de Mariscos Muelle 27",
         "inLanguage": "es-MX",
         "hasMenuSection": [
@@ -43,7 +52,8 @@
           { "@type": "MenuSection", "name": "Camarones", "url": "https://mariscosmuelle27.com/carta/camarones/" },
           { "@type": "MenuSection", "name": "Pescados y Mojarras", "url": "https://mariscosmuelle27.com/carta/pescados-y-mojarras/" },
           { "@type": "MenuSection", "name": "Pozole", "url": "https://mariscosmuelle27.com/carta/pozole/" },
-          { "@type": "MenuSection", "name": "Desayunos", "url": "https://mariscosmuelle27.com/carta/desayunos/" }
+          { "@type": "MenuSection", "name": "Desayunos", "url": "https://mariscosmuelle27.com/carta/desayunos/" },
+          { "@type": "MenuSection", "name": "Bebidas", "url": "https://mariscosmuelle27.com/carta/bebidas/" }
         ]
       }
     ]
@@ -51,6 +61,11 @@
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHFG2S49"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <header class="site-header">
@@ -73,8 +88,22 @@
         <nav class="nav-primary" id="nav-primary" aria-label="Navegación principal">
           <ul>
             <li><a href="../">Inicio</a></li>
-            <li><a href="./pozole/">Pozole Jue-Vie</a></li>
-            <li><a href="./desayunos/">Desayunos</a></li>
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-carta">
+                Carta <span class="dropdown-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="dropdown-menu" id="dropdown-carta" role="menu">
+                <li role="none"><a role="menuitem" href="./">Ver carta completa</a></li>
+                <li role="none"><a role="menuitem" href="./aguachiles/">Aguachiles</a></li>
+                <li role="none"><a role="menuitem" href="./ceviches-y-tostadas/">Ceviches y tostadas</a></li>
+                <li role="none"><a role="menuitem" href="./camarones/">Camarones</a></li>
+                <li role="none"><a role="menuitem" href="./pescados-y-mojarras/">Pescados, Mojarras y Pulpo</a></li>
+                <li role="none"><a role="menuitem" href="./pozole/">Pozole · Jue-Vie</a></li>
+                <li role="none"><a role="menuitem" href="./desayunos/">Desayunos</a></li>
+                <li role="none"><a role="menuitem" href="./bebidas/">Bebidas</a></li>
+              </ul>
+            </li>
+            <li><a href="../blog/">Blog</a></li>
             <li><a href="../nosotros/">Nosotros</a></li>
             <li><a href="../contacto/">Contacto</a></li>
             <li><a href="#reservar" class="nav-cta" data-open="wa">Reservar</a></li>
@@ -118,8 +147,26 @@
       </div>
     </div>
 
+    <!-- SUB-NAV DE ANCLAS (jump menu para carta digital) -->
+    <nav class="carta-jumpnav" aria-label="Saltar a sección de la carta">
+      <div class="carta-jumpnav-track">
+        <a href="#mesa-capitan">⚓ Mesa del capitán</a>
+        <a href="#capitulos">📖 Capítulos</a>
+        <a href="#entradas">Entradas</a>
+        <a href="#ensaladas">Ensaladas</a>
+        <a href="#especiales">Especiales</a>
+        <a href="#mariscadas">Mariscadas</a>
+        <a href="#hamburguesa">Hamburguesa</a>
+        <a href="#peques">Peques</a>
+        <a href="#guarniciones">Guarniciones</a>
+        <a href="#bebidas">Bebidas</a>
+        <a href="#cortes">Cortes</a>
+        <a href="#postres">Postres</a>
+      </div>
+    </nav>
+
     <!-- RECOMENDACIONES DEL CAPITÁN -->
-    <section class="wood-bg" style="padding: var(--space-lg) 0 var(--space-md);">
+    <section id="mesa-capitan" class="wood-bg" style="padding: var(--space-lg) 0 var(--space-md);">
       <div class="container">
         <div class="scroll-panel">
           <div class="section-heading fade-cycle">
@@ -165,12 +212,10 @@
             <article class="estrella-card reveal reveal-delay-2" data-tilt>
               <div class="estrella-photo">
                 <span class="estrella-badge">⚓ Recomendación 03</span>
-                <div class="photo-slot">
-                  <div class="photo-slot-icon">📷</div>
-                  <div class="photo-slot-label">Foto pendiente · Recomendación 03</div>
-                  <div class="photo-slot-title">Torre de mariscos</div>
-                  <div class="photo-slot-desc">Torre vertical con capas claras visibles: camarón rosa, pulpo, callo blanco, aguacate verde, pepino, jitomate. Salsas negras escurriendo desde arriba. Vista frontal o ligeramente lateral para mostrar la altura. Formato 4:3.</div>
-                </div>
+                <img src="../img/torre-de-mariscos-muelle-27-queretaro.webp"
+                     alt="Torre de mariscos con camarón, pulpo, callo de hacha, aguacate y salsas negras — Mariscos Muelle 27, Jardines del Cimatario, Querétaro"
+                     width="1080" height="1080"
+                     loading="lazy" decoding="async">
               </div>
               <div class="estrella-body">
                 <h3>Torre de mariscos</h3>
@@ -200,45 +245,63 @@
     </section>
 
     <!-- SEIS CAPÍTULOS — Cross-link cards -->
-    <section class="wood-bg" style="padding: var(--space-lg) 0;">
+    <section id="capitulos" class="wood-bg" style="padding: var(--space-lg) 0;">
       <div class="container">
         <div class="scroll-panel">
           <div class="section-heading fade-cycle">
             <div class="overline">Cuaderno de Bitácora</div>
             <h2 class="fill-text fill-text--dark">El mar entero en seis capítulos</h2>
           </div>
-          <div class="cross-link-grid">
-            <a href="./aguachiles/" class="cross-link-card reveal">
+          <div class="cross-link-grid cross-link-grid--photo">
+            <a href="./aguachiles/" class="cross-link-card cross-link-card--photo reveal">
+              <picture class="cross-link-card-bg">
+                <img src="../img/aguachile-mariscos-muelle-27-queretaro-1x1.webp" alt="Aguachile verde de camarón fresco en Mariscos Muelle 27, Querétaro" loading="lazy" decoding="async" width="900" height="900">
+              </picture>
               <span class="cross-link-card-num">I</span>
               <h3>Aguachiles</h3>
               <p>Verde, negro, mango y del muelle. Por jarra de medio o un litro.</p>
               <span class="cross-link-card-cta">Ver capítulo →</span>
             </a>
-            <a href="./ceviches-y-tostadas/" class="cross-link-card reveal reveal-delay-1">
+            <a href="./ceviches-y-tostadas/" class="cross-link-card cross-link-card--photo reveal reveal-delay-1">
+              <picture class="cross-link-card-bg">
+                <img src="../img/tostada-ceviche-mariscos-muelle-27-queretaro-1x1.webp" alt="Tostada de ceviche con receta de la costa de Michoacán en Mariscos Muelle 27, Querétaro" loading="lazy" decoding="async" width="900" height="900">
+              </picture>
               <span class="cross-link-card-num">II</span>
               <h3>Ceviches y Tostadas</h3>
               <p>Nueve tostadas individuales y ceviche por jarra. Costa de Michoacán.</p>
               <span class="cross-link-card-cta">Ver capítulo →</span>
             </a>
-            <a href="./camarones/" class="cross-link-card reveal reveal-delay-2">
+            <a href="./camarones/" class="cross-link-card cross-link-card--photo reveal reveal-delay-2">
+              <picture class="cross-link-card-bg">
+                <img src="../img/camarones-mojo-ajo-mariscos-muelle-27-queretaro-1x1.webp" alt="Camarones al mojo de ajo con arroz en Mariscos Muelle 27, Querétaro" loading="lazy" decoding="async" width="900" height="900">
+              </picture>
               <span class="cross-link-card-num">III</span>
               <h3>Camarones</h3>
               <p>Once preparaciones distintas, $220 c/u. Cocteles en tres tamaños.</p>
               <span class="cross-link-card-cta">Ver capítulo →</span>
             </a>
-            <a href="./pescados-y-mojarras/" class="cross-link-card reveal reveal-delay-3">
+            <a href="./pescados-y-mojarras/" class="cross-link-card cross-link-card--photo reveal reveal-delay-3">
+              <picture class="cross-link-card-bg">
+                <img src="../img/mojarra-especial-muelle-mariscos-muelle-27-queretaro-1x1.webp" alt="Mojarra especial Muelle gratinada con mariscos en Mariscos Muelle 27, Querétaro" loading="lazy" decoding="async" width="900" height="900">
+              </picture>
               <span class="cross-link-card-num">IV</span>
               <h3>Pescados, Mojarras y Pulpo</h3>
               <p>Filete desde $190, mojarra entera $290, pulpo $270. Caldos del mar.</p>
               <span class="cross-link-card-cta">Ver capítulo →</span>
             </a>
-            <a href="./pozole/" class="cross-link-card reveal reveal-delay-4">
+            <a href="./pozole/" class="cross-link-card cross-link-card--photo reveal reveal-delay-4">
+              <picture class="cross-link-card-bg">
+                <img src="../img/pozole-mariscos-muelle-27-queretaro-1x1.webp" alt="Pozole de la casa servido los jueves y viernes en Mariscos Muelle 27, Querétaro" loading="lazy" decoding="async" width="900" height="900">
+              </picture>
               <span class="cross-link-card-num">V</span>
               <h3>Pozole · Jue-Vie</h3>
               <p>Sólo jueves y viernes, tres tamaños desde $40.</p>
               <span class="cross-link-card-cta">Ver capítulo →</span>
             </a>
-            <a href="./desayunos/" class="cross-link-card reveal reveal-delay-4">
+            <a href="./desayunos/" class="cross-link-card cross-link-card--photo reveal reveal-delay-4">
+              <picture class="cross-link-card-bg">
+                <img src="../img/chilaquiles-rojos-mariscos-muelle-27-queretaro-1x1.webp" alt="Chilaquiles rojos con huevo en el desayuno de Mariscos Muelle 27, Querétaro" loading="lazy" decoding="async" width="900" height="900">
+              </picture>
               <span class="cross-link-card-num">VI</span>
               <h3>Desayunos · Desde 9 AM</h3>
               <p>Huevos, chilaquiles, omelettes, hot cakes y café de olla.</p>
@@ -250,7 +313,7 @@
     </section>
 
     <!-- ENTRADAS -->
-    <section class="wood-bg" style="padding: 0 0 var(--space-md);">
+    <section id="entradas" class="wood-bg" style="padding: 0 0 var(--space-md);">
       <div class="container">
         <div class="scroll-panel">
           <div class="section-heading fade-cycle">
@@ -270,7 +333,7 @@
     </section>
 
     <!-- ENSALADAS -->
-    <section class="wood-bg" style="padding: 0 0 var(--space-md);">
+    <section id="ensaladas" class="wood-bg" style="padding: 0 0 var(--space-md);">
       <div class="container">
         <div class="scroll-panel">
           <div class="section-heading fade-cycle">
@@ -287,7 +350,7 @@
     </section>
 
     <!-- ESPECIALES -->
-    <section class="wood-bg" style="padding: 0 0 var(--space-md);">
+    <section id="especiales" class="wood-bg" style="padding: 0 0 var(--space-md);">
       <div class="container">
         <div class="scroll-panel">
           <div class="section-heading fade-cycle">
@@ -298,10 +361,10 @@
           <div class="menu-section reveal">
             <div class="menu-row"><span class="menu-row-name">Ostiones (6 pzas)<small class="menu-row-desc">Preparados con pico de gallo y salsa de la casa.</small></span><span class="menu-row-price">$170</span></div>
             <div class="menu-row"><span class="menu-row-name">Almeja chocolata (6 pzas)<small class="menu-row-desc">Preparada con pico de gallo y salsa de la casa.</small></span><span class="menu-row-price">$170</span></div>
-            <div class="menu-row"><span class="menu-row-name">Aguachile especial<small class="menu-row-desc">Cabañitas, salsa, chiltepín, mezcla de camarones crudos y cocidos.</small></span><span class="menu-row-price">$320</span></div>
-            <div class="menu-row"><span class="menu-row-name">Cevichula<small class="menu-row-desc">Botana de ceviche con totopos + michelada.</small></span><span class="menu-row-price">$250</span></div>
+            <div class="menu-row"><span class="menu-row-name">Aguanile<small class="menu-row-desc">Caballitos preparados, escarchados con mezcla de salsas y chiltepín en polvo, acompañados de mezcla de camarones crudos y cocidos.</small></span><span class="menu-row-price">$320</span></div>
+            <div class="menu-row"><span class="menu-row-name">Cevichela<small class="menu-row-desc">Botana de ceviche con totopos acompañada de una refrescante michelada.</small></span><span class="menu-row-price">$250</span></div>
             <div class="menu-row"><span class="menu-row-name">Torre de mariscos<small class="menu-row-desc">Capas de camarón crudo y cocido, pulpo, callo de hacha, aguacate, pepino, jitomate, salsas negras.</small></span><span class="menu-row-price">$250</span></div>
-            <div class="menu-row"><span class="menu-row-name">Piña rellena<small class="menu-row-desc">Mezcla de mariscos y pimientos, gratinada con queso.</small></span><span class="menu-row-price">$280</span></div>
+            <div class="menu-row"><span class="menu-row-name">Piña rellena<small class="menu-row-desc">Rellena con una mezcla de mariscos, pimientos y gratinada con queso.</small></span><span class="menu-row-price">$260</span></div>
             <div class="menu-row"><span class="menu-row-name">Molcajete mar y tierra<small class="menu-row-desc">Arrachera asada, chistorra, salchicha, pulpo, camarones, queso panela, tortillas.</small></span><span class="menu-row-price">$360</span></div>
             <div class="menu-row"><span class="menu-row-name">Spaghetti con camarones<small class="menu-row-desc">A la mantequilla con camarones salteados.</small></span><span class="menu-row-price">$160</span></div>
             <div class="menu-row"><span class="menu-row-name">Burrito de mariscos</span><span class="menu-row-price">$195</span></div>
@@ -311,7 +374,7 @@
     </section>
 
     <!-- MARISCADAS -->
-    <section class="wood-bg" style="padding: 0 0 var(--space-md);">
+    <section id="mariscadas" class="wood-bg" style="padding: 0 0 var(--space-md);">
       <div class="container">
         <div class="scroll-panel">
           <div class="section-heading fade-cycle">
@@ -337,7 +400,7 @@
     </section>
 
     <!-- HAMBURGUESA MUELLE -->
-    <section class="wood-bg" style="padding: 0 0 var(--space-md);">
+    <section id="hamburguesa" class="wood-bg" style="padding: 0 0 var(--space-md);">
       <div class="container">
         <div class="scroll-panel">
           <div class="signature">
@@ -371,7 +434,7 @@
             <h2 class="fill-text fill-text--dark">Acompaña tu mesa</h2>
           </div>
 
-          <div class="menu-section reveal">
+          <div id="peques" class="menu-section reveal">
             <div class="menu-section-header"><h3>Para los peques</h3></div>
             <div class="menu-row"><span class="menu-row-name">Pasta infantil (100 gr)<small class="menu-row-desc">Spaghetti a la mantequilla con camarones o jamón.</small></span><span class="menu-row-price">$120</span></div>
             <div class="menu-row"><span class="menu-row-name">Quesadillas (2 pzas)</span><span class="menu-row-price">$50</span></div>
@@ -381,7 +444,7 @@
             <div class="menu-row"><span class="menu-row-name">Brochetas de queso<small class="menu-row-desc">Con guarnición de papas.</small></span><span class="menu-row-price">$120</span></div>
           </div>
 
-          <div class="menu-section reveal reveal-delay-1">
+          <div id="guarniciones" class="menu-section reveal reveal-delay-1">
             <div class="menu-section-header"><h3>Guarniciones</h3></div>
             <div class="menu-row"><span class="menu-row-name">Arroz</span><span class="menu-row-price">$30</span></div>
             <div class="menu-row"><span class="menu-row-name">Ensalada de la casa</span><span class="menu-row-price">$30</span></div>
@@ -391,10 +454,10 @@
             <div class="menu-row"><span class="menu-row-name">Orden de papas a la francesa</span><span class="menu-row-price">$80</span></div>
           </div>
 
-          <div class="menu-section reveal reveal-delay-2">
-            <div class="menu-section-header"><h3>Bebidas</h3></div>
-            <div class="menu-row"><span class="menu-row-name">Limonada</span><span class="menu-row-price">$55</span></div>
-            <div class="menu-row"><span class="menu-row-name">Naranjada</span><span class="menu-row-price">$55</span></div>
+          <div id="bebidas" class="menu-section reveal reveal-delay-2">
+            <div class="menu-section-header"><h3>Bebidas</h3><a href="./bebidas/" style="font-family:var(--font-ui);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--escarlate);text-decoration:none;">Ver capítulo completo →</a></div>
+            <div class="menu-row"><span class="menu-row-name">Limonada</span><span class="menu-row-price">$65</span></div>
+            <div class="menu-row"><span class="menu-row-name">Naranjada</span><span class="menu-row-price">$65</span></div>
             <div class="menu-row"><span class="menu-row-name">Agua embotellada</span><span class="menu-row-price">$30</span></div>
             <div class="menu-row"><span class="menu-row-name">Refresco</span><span class="menu-row-price">$45</span></div>
             <div class="menu-row"><span class="menu-row-name">Agua mineral</span><span class="menu-row-price">$45</span></div>
@@ -402,9 +465,14 @@
             <div class="menu-row"><span class="menu-row-name">Agua de sabor</span><span class="menu-row-price">$38</span></div>
           </div>
 
-          <div class="menu-section reveal reveal-delay-3">
-            <div class="menu-section-header"><h3>Cortes y postres</h3></div>
-            <p class="menu-section-intro">Pregunta a tu mesero por los cortes a la parrilla del día y por la disponibilidad de postres y cafetería tradicional. Rotamos según el inventario semanal.</p>
+          <div id="cortes" class="menu-section reveal reveal-delay-3">
+            <div class="menu-section-header"><h3>Cortes a la parrilla</h3></div>
+            <p class="menu-section-intro">Para los que prefieren un buen corte de carne, también tenemos parrilla. Pregunta a tu mesero por los cortes disponibles del día y sus acompañamientos.</p>
+          </div>
+
+          <div id="postres" class="menu-section reveal reveal-delay-3">
+            <div class="menu-section-header"><h3>Postres y cafetería tradicional</h3></div>
+            <p class="menu-section-intro">Cerramos la mesa con postres caseros y cafetería tradicional. Consulta con tu mesero por la disponibilidad del día — rotamos según el inventario semanal.</p>
           </div>
         </div>
       </div>
@@ -426,7 +494,7 @@
     <div class="footer-grid">
       <div>
         <h4>Mariscos Muelle 27</h4>
-        <p>Bitácora de sabor anclada en Jardines del Cimatario. Mariscos frescos de la costa de Michoacán, servidos en Querétaro.</p>
+        <p>Bitácora de sabor anclada en Jardines del Cimatario. Mariscos frescos de la costa de Michoacán, servidos en Querétaro.</p><div class="footer-social"><a href="https://www.facebook.com/people/Mariscos-Muelle-27/61590435500715/" target="_blank" rel="noopener me" aria-label="Facebook de Mariscos Muelle 27" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073c0 6.026 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.489h-2.796v8.437C19.612 23.094 24 18.1 24 12.073z"/></svg></a><a href="https://www.instagram.com/muellee27" target="_blank" rel="noopener me" aria-label="Instagram de Mariscos Muelle 27" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07M12 0C8.741 0 8.332.015 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.985 8.741 24 12 24s3.668-.015 4.948-.072c1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.057-1.28.072-1.689.072-4.948s-.015-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.015 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div>
       </div>
       <div>
         <h4>Navegación</h4>
@@ -445,7 +513,7 @@
           Jardines del Cimatario<br>
           Querétaro, Qro.<br>
           <a href="tel:+524428085907">442 808 5907</a><br>
-          Mar–Dom · 9:00–18:00
+          Lun–Dom · 9:00–18:30
         </p>
       </div>
       <div>
@@ -454,8 +522,8 @@
           <li><a href="../aviso-de-privacidad/">Aviso de privacidad</a></li>
           <li><a href="../terminos-y-condiciones/">Términos y condiciones</a></li>
           <li><a href="../contacto/">Contacto</a></li>
-          <li><a href="https://instagram.com/muelle27_queretaro" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://facebook.com/muelle27_queretaro" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/muellee27" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Mariscos-Muelle-27/61590435500715/" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </div>
     </div>
@@ -506,6 +574,6 @@
     </div>
   </div>
 
-  <script src="../js/main.js?v=20260430e" defer></script>
+  <script src="../js/main.js?v=1170bf6f" defer></script>
 </body>
 </html>

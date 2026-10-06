@@ -329,7 +329,7 @@ h1, h2, h3, h4 {
   margin-top: 0.25rem;
 }
 
-.nav-primary ul {
+.nav-primary > ul {
   display: flex;
   gap: 1.8rem;
   align-items: center;
@@ -414,13 +414,18 @@ h1, h2, h3, h4 {
     transform: scale(1);
   }
 
-  .nav-primary ul {
+  .nav-primary > ul {
     flex-direction: column;
     gap: 1.8rem;
     text-align: center;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  .nav-primary a { font-size: 1.1rem; }
+  .nav-primary > ul > li > a,
+  .nav-primary > ul > li > .dropdown-toggle { font-size: 1.1rem; }
 
   .menu-toggle.is-open { position: fixed; top: 1rem; right: 1rem; z-index: 2100; }
 }
@@ -477,14 +482,14 @@ h1, h2, h3, h4 {
 
 .hero-content {
   max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
 
-.hero-content .hero-overline { justify-content: center; }
-.hero-content .hero-desc { margin-left: auto; margin-right: auto; }
-.hero-content .hero-ctas { justify-content: center; }
-.hero-content .hero-trust { justify-content: center; }
+.hero-content .hero-overline { justify-content: flex-start; }
+.hero-content .hero-desc { margin-left: 0; margin-right: 0; }
+.hero-content .hero-ctas { justify-content: flex-start; }
+.hero-content .hero-trust { justify-content: flex-start; }
 
 /* Indicador de scroll al pie del hero */
 .hero-scroll-cue {
@@ -1334,6 +1339,41 @@ h1, h2, h3, h4 {
   margin-bottom: 0.6rem;
 }
 
+/* Tarjetas "Por qué" con imagen de fondo + overlay (misma opacidad que el hero) */
+.bento-card--photo {
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--cream);
+}
+.bento-card--photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.7) 100%);
+}
+.bento-card--photo > * {
+  position: relative;
+  z-index: 2;
+}
+.bento-card.bento-card--photo h3 {
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+.bento-card.bento-card--photo p {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
 .bento-card p {
   font-size: 0.95rem;
   line-height: 1.7;
@@ -1465,6 +1505,22 @@ footer a:hover,
 footer a:focus-visible { color: var(--sky-deep); }
 
 footer ul { display: flex; flex-direction: column; gap: 0.4rem; }
+
+/* Iconos de redes en el footer (E-E-A-T · rel=me) */
+.footer-social { display: flex; gap: 0.8rem; margin-top: 1.1rem; }
+.footer-social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(200, 160, 99, 0.35);
+  color: var(--parchment);
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: #241813; background: var(--coral-warm); border-color: var(--coral-warm);
+  transform: translateY(-2px);
+}
+.footer-social svg { width: 20px; height: 20px; display: block; }
 
 .footer-credit {
   max-width: var(--max-width);
@@ -2283,6 +2339,232 @@ img.polaroid-photo {
 }
 
 /* ==========================================
+   COMIDA PARA LLEVAR — pasos numerados estilo bitácora
+   ========================================== */
+.pickup-steps {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  counter-reset: pickup;
+}
+
+.pickup-step {
+  position: relative;
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--cream) 100%);
+  border: 1px solid var(--wood-light);
+  border-bottom: 3px solid var(--brass);
+  border-radius: var(--radius-sm);
+  padding: 2.4rem 1.6rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.pickup-step-num {
+  position: absolute;
+  top: -14px;
+  left: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 32px;
+  padding: 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: var(--cream);
+  background: linear-gradient(180deg, var(--brass-bright) 0%, var(--brass) 100%);
+  border: 1px solid var(--wood-dark);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pickup-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--navy-deep);
+  margin: 0 0 0.5rem;
+}
+
+.pickup-step p {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pickup-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  .pickup-step { padding: 2.2rem 1.3rem 1.2rem; }
+  .pickup-step h3 { font-size: 1.2rem; }
+}
+
+/* Variante con foto cuadrada de fondo + overlay (carta — 6 capítulos)
+   Mismo patrón que .stack-card en la Home: picture absoluto, overlay vía ::after,
+   contenido con z-index 1 encima. */
+.cross-link-grid--photo {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.cross-link-card--photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  padding: 1.6rem 1.5rem;
+  border: 1px solid var(--wood-dark);
+  border-bottom: 3px solid var(--brass);
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.cross-link-card--photo .cross-link-card-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.cross-link-card--photo .cross-link-card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* Overlay negro semi-transparente uniforme (idéntico a stack-card en Home) */
+.cross-link-card--photo .cross-link-card-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.7) 100%);
+}
+
+@media (max-width: 900px) {
+  .cross-link-card--photo .cross-link-card-bg::after {
+    background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.75) 100%);
+  }
+}
+
+/* Todo el contenido del card va encima del fondo */
+.cross-link-card--photo > *:not(.cross-link-card-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.cross-link-card--photo .cross-link-card-num {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.5rem;
+  font-size: 1.9rem;
+  color: var(--brass-bright);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.cross-link-card--photo h3 {
+  color: var(--cream);
+  font-size: 1.4rem;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.cross-link-card--photo p {
+  color: var(--parchment);
+  font-style: italic;
+  opacity: 0.95;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
+
+.cross-link-card--photo .cross-link-card-cta {
+  color: var(--brass-bright);
+  margin-top: 0.5rem;
+  padding-top: 0;
+}
+
+.cross-link-card--photo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--escarlate);
+}
+
+.cross-link-card--photo:hover .cross-link-card-bg img {
+  transform: scale(1.05);
+}
+
+/* MÓVIL: efecto stack-cards en los 6 capítulos del hub /carta/
+   Cada card se queda sticky al top mientras la siguiente la cubre al hacer scroll.
+   Mismo patrón que el .stack-card del home. */
+@media (max-width: 800px) {
+  .cross-link-grid--photo {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 80px;
+    padding-bottom: 40vh;
+  }
+
+  .cross-link-card--photo {
+    position: sticky;
+    aspect-ratio: auto;
+    min-height: 58vh;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+  }
+
+  .cross-link-card--photo:nth-child(1) { top: 90px; }
+  .cross-link-card--photo:nth-child(2) { top: 104px; }
+  .cross-link-card--photo:nth-child(3) { top: 118px; }
+  .cross-link-card--photo:nth-child(4) { top: 132px; }
+  .cross-link-card--photo:nth-child(5) { top: 146px; }
+  .cross-link-card--photo:nth-child(6) { top: 160px; }
+
+  .cross-link-card--photo h3 { font-size: 1.55rem; }
+  .cross-link-card--photo p  { font-size: 1rem; line-height: 1.55; }
+  .cross-link-card--photo .cross-link-card-num { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+  .cross-link-card--photo { min-height: 62vh; }
+  .cross-link-card--photo:nth-child(1) { top: 80px; }
+  .cross-link-card--photo:nth-child(2) { top: 92px; }
+  .cross-link-card--photo:nth-child(3) { top: 104px; }
+  .cross-link-card--photo:nth-child(4) { top: 116px; }
+  .cross-link-card--photo:nth-child(5) { top: 128px; }
+  .cross-link-card--photo:nth-child(6) { top: 140px; }
+}
+
+/* Si el navegador no soporta sticky, fallback a flow normal */
+@supports not (position: sticky) {
+  @media (max-width: 800px) {
+    .cross-link-card--photo { position: relative; top: auto; }
+  }
+}
+
+/* ==========================================
    20.7 MARQUEE HORIZONTAL DE KEYWORDS
    ========================================== */
 .marquee {
@@ -2291,7 +2573,7 @@ img.polaroid-photo {
     linear-gradient(90deg, var(--brass) 0%, var(--brass-bright) 50%, var(--brass) 100%);
   border-top: 1px solid var(--wood-dark);
   border-bottom: 1px solid var(--wood-dark);
-  padding: 0.95rem 0;
+  padding: 1.35rem 0;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -2540,7 +2822,357 @@ img.polaroid-photo {
 }
 
 /* ==========================================
-   22. UTILITARIOS
+   23. DROPDOWN DEL HEADER (Carta ▾)
+   ========================================== */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--parchment);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.25s;
+  position: relative;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus-visible {
+  color: var(--sky-deep);
+  outline: none;
+}
+
+.dropdown-caret {
+  font-size: 0.7em;
+  line-height: 1;
+  transition: transform 0.25s ease;
+  color: var(--brass-bright);
+}
+
+.has-dropdown[aria-expanded="true"] .dropdown-caret,
+.has-dropdown.is-open .dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 260px;
+  max-width: 320px;
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--cream) 100%);
+  border: 1px solid var(--wood-dark);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  margin: 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  z-index: 100;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: var(--parchment);
+  border-left: 1px solid var(--wood-dark);
+  border-top: 1px solid var(--wood-dark);
+}
+
+.has-dropdown.is-open .dropdown-menu,
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--navy-deep);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background: var(--brass-bright);
+  color: var(--cream);
+}
+
+.dropdown-menu li:first-child a {
+  font-weight: 600;
+  border-bottom: 1px solid rgba(74, 44, 26, 0.15);
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.7rem;
+}
+
+/* Anular el underline animado de .nav-primary a en los items del dropdown */
+.dropdown-menu a::after { display: none; }
+
+/* Mobile: el dropdown se vuelve un sub-acordeón dentro del menú colapsado */
+@media (max-width: 900px) {
+  .has-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.7rem 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    background: rgba(255, 248, 230, 0.06);
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0.3rem 0 0.5rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    list-style: none;
+    text-align: center;
+  }
+
+  .dropdown-menu::before { display: none; }
+
+  .has-dropdown.is-open .dropdown-menu,
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown:focus-within .dropdown-menu {
+    max-height: 600px;
+    transform: none;
+  }
+
+  .dropdown-menu a {
+    color: var(--cream);
+    padding: 0.6rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(228, 199, 133, 0.12);
+    white-space: normal;
+    text-align: center;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a:focus-visible {
+    background: transparent;
+    color: var(--brass-bright);
+  }
+
+  .dropdown-menu li:first-child a {
+    border-bottom: 1px solid rgba(228, 199, 133, 0.25);
+  }
+}
+
+/* ==========================================
+   24. SUB-NAV DE ANCLAS (carta hub)
+   ========================================== */
+.carta-jumpnav {
+  position: sticky;
+  top: 70px;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(28, 18, 10, 0.96) 0%, rgba(28, 18, 10, 0.92) 100%);
+  border-bottom: 1px solid var(--brass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1.35rem 0;
+  margin-bottom: 1rem;
+}
+
+.carta-jumpnav-track {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brass) transparent;
+  padding: 0.35rem 1.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carta-jumpnav-track::-webkit-scrollbar { height: 4px; }
+.carta-jumpnav-track::-webkit-scrollbar-thumb { background: var(--brass); border-radius: 2px; }
+
+.carta-jumpnav a {
+  flex: 0 0 auto;
+  padding: 0.6rem 1.15rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  text-decoration: none;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.carta-jumpnav a:hover,
+.carta-jumpnav a:focus-visible {
+  background: var(--brass-bright);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .carta-jumpnav {
+    top: 64px;
+    padding: 1.35rem 0 0.7rem;
+  }
+  .carta-jumpnav-track {
+    gap: 0.55rem;
+    padding: 0.4rem 1rem;
+  }
+  .carta-jumpnav a {
+    font-size: 0.78rem;
+    padding: 0.6rem 1.05rem;
+  }
+}
+
+/* Estrellas grid en variante de 2 columnas (bebidas, etc.) */
+.estrellas-grid--two {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Feature band del pozole: texto izquierda + foto derecha */
+.pozole-feature { text-align: left; }
+
+.pozole-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.pozole-feature-text {
+  text-align: left;
+}
+
+.pozole-feature-text .overline { justify-content: flex-start; }
+.pozole-feature-text .feature-band-days { justify-content: flex-start; }
+
+.pozole-feature-photo {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--brass);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 6px 14px rgba(0, 0, 0, 0.25);
+  background: var(--ink);
+  transition: transform 0.5s ease;
+}
+
+.pozole-feature-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.pozole-feature-photo figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.4rem 1.5rem 1.3rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.85) 100%);
+  color: var(--cream);
+}
+
+.pozole-feature-photo-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--brass-bright);
+  margin-bottom: 0.4rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.pozole-feature-photo-desc {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--parchment);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 800px) {
+  .pozole-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .pozole-feature-text { text-align: center; }
+  .pozole-feature-text .overline { justify-content: center; }
+  .pozole-feature-text .feature-band-days { justify-content: center; }
+}
+
+/* scroll-margin para que el sub-nav sticky no tape el destino */
+[id="mesa-capitan"], [id="capitulos"], [id="entradas"], [id="ensaladas"],
+[id="especiales"], [id="mariscadas"], [id="hamburguesa"], [id="peques"],
+[id="guarniciones"], [id="bebidas"], [id="cortes"], [id="postres"] {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 600px) {
+  [id="mesa-capitan"], [id="capitulos"], [id="entradas"], [id="ensaladas"],
+  [id="especiales"], [id="mariscadas"], [id="hamburguesa"], [id="peques"],
+  [id="guarniciones"], [id="bebidas"], [id="cortes"], [id="postres"] {
+    scroll-margin-top: 120px;
+  }
+}
+
+/* ==========================================
+   25. UTILITARIOS
    ========================================== */
 .text-center { text-align: center; }
 .mt-sm { margin-top: var(--space-sm); }

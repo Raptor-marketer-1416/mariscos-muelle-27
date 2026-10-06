@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mariscos Muelle 27 | Marisquería en Jardines del Cimatario, Querétaro</title>
-  <meta name="description" content="Mariscos Muelle 27: marisquería familiar en Jardines del Cimatario, Querétaro. Aguachiles, ceviches, camarones, pescados y pozole jue-vie. Terraza fresca, Mar-Dom.">
+  <title>Marisquería en Querétaro | Mariscos Muelle 27</title>
+  <meta name="description" content="Mariscos frescos estilo costa de Michoacán, recetas de generación en generación. Aguachiles, ceviches, mariscadas, pozole y desayunos desde 9 AM · Reserva ya.">
   <link rel="canonical" href="https://mariscosmuelle27.com/">
   <link rel="icon" type="image/webp" href="./img/favicon-mariscos-muelle-27.webp">
   <link rel="apple-touch-icon" href="./img/favicon-mariscos-muelle-27.webp">
@@ -16,14 +16,23 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="restaurant">
-  <meta property="og:title" content="Mariscos Muelle 27 | Marisquería en Jardines del Cimatario, Querétaro">
-  <meta property="og:description" content="Mariscos frescos de la costa de Michoacán, servidos en Jardines del Cimatario. Terraza familiar, Mar-Dom 9:00-18:00.">
+  <meta property="og:title" content="Marisquería en Querétaro | Mariscos Muelle 27">
+  <meta property="og:description" content="Mariscos frescos estilo costa de Michoacán, recetas de generación en generación. Aguachiles, ceviches, mariscadas, pozole y desayunos desde 9 AM · Reserva ya.">
   <meta property="og:url" content="https://mariscosmuelle27.com/">
   <meta property="og:image" content="https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp">
 
-  <link rel="stylesheet" href="./css/styles.css?v=20260430j">
+  <link rel="stylesheet" href="./css/styles.css?v=2f82b136">
 
   <!-- Schema JSON-LD: Restaurant + LocalBusiness + FAQPage + WebSite -->
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WHFG2S49');</script>
+  <!-- End Google Tag Manager -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,13 +41,26 @@
         "@type": "Restaurant",
         "@id": "https://mariscosmuelle27.com/#restaurant",
         "name": "Mariscos Muelle 27",
-        "image": "https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp",
+        "image": { "@id": "https://mariscosmuelle27.com/#logo" },
+        "logo": { "@id": "https://mariscosmuelle27.com/#logo" },
         "url": "https://mariscosmuelle27.com/",
         "telephone": "+524428085907",
+        "email": "contacto@mariscosmuelle27.com",
         "priceRange": "$$",
         "servesCuisine": ["Seafood", "Mexican", "Michoacán-style", "Pacific coast"],
         "description": "Marisquería familiar en Jardines del Cimatario, Querétaro. Mariscos frescos de la costa de Michoacán, recetas heredadas de generación en generación, terraza fresca y ambiente familiar.",
         "acceptsReservations": "True",
+        "currenciesAccepted": "MXN",
+        "paymentAccepted": "Efectivo, Tarjeta de crédito y débito",
+        "areaServed": [
+          { "@type": "Place", "name": "Jardines del Cimatario, Querétaro" },
+          { "@type": "Place", "name": "Colinas del Cimatario, Querétaro" },
+          { "@type": "Place", "name": "Centro Sur, Querétaro" },
+          { "@type": "Place", "name": "Cerro del Cimatario, Querétaro" },
+          { "@type": "Place", "name": "Zona sur de Santiago de Querétaro" }
+        ],
+        "knowsAbout": ["Aguachiles", "Ceviches y tostadas", "Camarones", "Pescados y mojarras", "Pozole", "Mariscos estilo costa de Michoacán", "Desayunos con mariscos"],
+        "hasMenu": { "@id": "https://mariscosmuelle27.com/carta/#menu" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Jardín de Alcatraz s/n",
@@ -52,16 +74,43 @@
           "latitude": 20.5466963,
           "longitude": -100.3859008
         },
-        "hasMap": "https://maps.google.com/?cid=14606040268572025881",
+        "hasMap": "https://maps.google.com/?cid=14616200800993696281",
         "openingHoursSpecification": [{
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
           "opens": "09:00",
-          "closes": "18:00"
+          "closes": "18:30"
         }],
         "sameAs": [
-          "https://www.instagram.com/muelle27_queretaro",
-          "https://www.facebook.com/muelle27_queretaro"
+          "https://www.instagram.com/muellee27",
+          "https://www.facebook.com/people/Mariscos-Muelle-27/61590435500715/",
+          "https://maps.google.com/?cid=14616200800993696281"
+        ],
+        "potentialAction": [
+          {
+            "@type": "OrderAction",
+            "name": "Pedir para llevar por WhatsApp",
+            "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://wa.me/524428085907",
+              "actionPlatform": [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform",
+                "http://schema.org/IOSPlatform",
+                "http://schema.org/AndroidPlatform"
+              ]
+            }
+          },
+          {
+            "@type": "OrderAction",
+            "name": "Pedir para llevar por teléfono",
+            "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "tel:+524428085907"
+            }
+          }
         ]
       },
       {
@@ -71,6 +120,23 @@
         "name": "Mariscos Muelle 27",
         "inLanguage": "es-MX",
         "publisher": { "@id": "https://mariscosmuelle27.com/#restaurant" }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://mariscosmuelle27.com/#logo",
+        "url": "https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp",
+        "contentUrl": "https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp",
+        "caption": "Mariscos Muelle 27"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://mariscosmuelle27.com/#webpage",
+        "url": "https://mariscosmuelle27.com/",
+        "name": "Marisquería en Querétaro | Mariscos Muelle 27",
+        "isPartOf": { "@id": "https://mariscosmuelle27.com/#website" },
+        "about": { "@id": "https://mariscosmuelle27.com/#restaurant" },
+        "primaryImageOfPage": { "@id": "https://mariscosmuelle27.com/#logo" },
+        "inLanguage": "es-MX"
       },
       {
         "@type": "FAQPage",
@@ -89,7 +155,7 @@
           {
             "@type": "Question",
             "name": "¿Tienen desayunos?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sí, servimos desayunos desde las 9:00 de la mañana, de martes a domingo: chilaquiles, huevos al gusto, antojos con el toque marino y más." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí, servimos desayunos desde las 9:00 de la mañana, de lunes a domingo: chilaquiles, huevos al gusto, antojos con el toque marino y más." }
           },
           {
             "@type": "Question",
@@ -99,12 +165,17 @@
           {
             "@type": "Question",
             "name": "¿Cuál es su horario?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Abrimos de martes a domingo, de 9:00 a 18:00 hrs. Cerrados los lunes." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Abrimos todos los días, de lunes a domingo, de 9:00 a 18:30 hrs." }
           },
           {
             "@type": "Question",
             "name": "¿Aceptan reservaciones?",
             "acceptedAnswer": { "@type": "Answer", "text": "Sí, puedes reservar llamando al 442 808 5907 o por WhatsApp." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Tienen comida para llevar?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí, toda la carta se prepara para llevar. Haz tu pedido por WhatsApp o llamando al 442 808 5907 y te confirmamos en cuánto tiempo está listo. Solo pasas a recogerlo a Jardín de Alcatraz s/n, Jardines del Cimatario, Querétaro." }
           }
         ]
       }
@@ -113,6 +184,11 @@
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHFG2S49"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <!-- ========================= HEADER ========================= -->
@@ -135,9 +211,23 @@
 
         <nav class="nav-primary" id="nav-primary" aria-label="Navegación principal">
           <ul>
-            <li><a href="./carta/">Carta</a></li>
-            <li><a href="./carta/pozole/">Pozole Jue-Vie</a></li>
-            <li><a href="./carta/desayunos/">Desayunos</a></li>
+            
+            <li class="has-dropdown">
+              <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-carta">
+                Carta <span class="dropdown-caret" aria-hidden="true">▾</span>
+              </button>
+              <ul class="dropdown-menu" id="dropdown-carta" role="menu">
+                <li role="none"><a role="menuitem" href="./carta/">Ver carta completa</a></li>
+                <li role="none"><a role="menuitem" href="./carta/aguachiles/">Aguachiles</a></li>
+                <li role="none"><a role="menuitem" href="./carta/ceviches-y-tostadas/">Ceviches y tostadas</a></li>
+                <li role="none"><a role="menuitem" href="./carta/camarones/">Camarones</a></li>
+                <li role="none"><a role="menuitem" href="./carta/pescados-y-mojarras/">Pescados, Mojarras y Pulpo</a></li>
+                <li role="none"><a role="menuitem" href="./carta/pozole/">Pozole · Jue-Vie</a></li>
+                <li role="none"><a role="menuitem" href="./carta/desayunos/">Desayunos</a></li>
+                <li role="none"><a role="menuitem" href="./carta/bebidas/">Bebidas</a></li>
+              </ul>
+            </li>
+            <li><a href="./blog/">Blog</a></li>
             <li><a href="./nosotros/">Nosotros</a></li>
             <li><a href="./contacto/">Contacto</a></li>
             <li><a href="#reservar" class="nav-cta" data-open="wa">Reservar</a></li>
@@ -178,7 +268,7 @@
           <div class="hero-trust">
             <span>⭐ Recetas familiares de Michoacán</span>
             <span>Terraza fresca zona sur</span>
-            <span>Mar–Dom 9:00–18:00</span>
+            <span>Lun–Dom 9:00–18:30</span>
           </div>
         </div>
       </div>
@@ -309,10 +399,32 @@
             <h3>Desayunos</h3>
           </div>
           <div>
-            <p>Arranca el día en el muelle. Chilaquiles, huevos al gusto y antojos con el toque marino de la casa, de martes a domingo desde las 9 de la mañana.</p>
+            <p>Arranca el día en el muelle. Chilaquiles, huevos al gusto y antojos con el toque marino de la casa, de lunes a domingo desde las 9 de la mañana.</p>
             <a href="./carta/desayunos/" class="stack-card-link">Ver barra de desayunos →</a>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- ========================= MARISQUERÍA EN QUERÉTARO (SEO head term) ========================= -->
+    <section class="wood-bg" style="padding: var(--space-lg) 0 var(--space-md);" aria-labelledby="marisqueria-qro-title">
+      <div class="container">
+        <div class="scroll-panel">
+          <div class="section-heading fade-cycle">
+            <div class="overline">Por qué el muelle</div>
+            <h2 id="marisqueria-qro-title" class="fill-text fill-text--dark">Una marisquería en Querétaro con sazón de la costa de Michoacán</h2>
+          </div>
+          <div style="max-width:760px;margin:0 auto;color:var(--ink);line-height:1.85;">
+            <p>Mariscos Muelle 27 es una <strong>marisquería en Querétaro</strong> anclada en Jardines del Cimatario, al sur de la ciudad. Preparamos mariscos frescos con recetas de la <strong>costa de Michoacán</strong> heredadas de generación en generación: aguachiles, ceviches y tostadas, camarones, pescados y mojarras, pozole los jueves y viernes, y desayunos desde las 9 de la mañana.</p>
+            <p>Lo que nos distingue entre las marisquerías de Querétaro es la frescura del producto del Pacífico, los <strong>precios visibles</strong> en toda la carta y la terraza más fresca del sur de la ciudad. Estamos a minutos de Centro Sur, Colinas del Cimatario y Cerro del Cimatario — descubre por qué somos la <a href="./mariscos-jardines-del-cimatario/" style="color:var(--escarlate);text-decoration:underline;">marisquería del sur de Querétaro</a> preferida de la zona.</p>
+          </div>
+          <ul class="reveal" style="max-width:760px;margin:1.5rem auto 0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.7rem 1.4rem;color:var(--ink);font-size:.95rem;">
+            <li>🦐 Producto fresco de la costa de Michoacán</li>
+            <li>💲 Precios visibles en toda la carta</li>
+            <li>🌴 Terraza fresca en Jardines del Cimatario</li>
+            <li>🕘 Abierto los 7 días · 9:00–18:30 hrs</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -331,8 +443,8 @@
       </div>
 
       <!-- Widget de reseñas Trustindex (full-width, fuera del container) -->
-      <div class="reviews-embed reveal reveal-delay-2">
-        <script defer async src='https://cdn.trustindex.io/loader.js?843dd9d701c6900908067cf3c04'></script>
+      <div class="reviews-embed">
+        <script defer src='https://cdn.trustindex.io/loader.js?843dd9d701c6900908067cf3c04'></script>
       </div>
 
     </section>
@@ -349,18 +461,18 @@
             <div class="location-info fade-cycle">
               <h2>Jardín de Alcatraz, Jardines del Cimatario</h2>
               <p>
-                Nuestro muelle se encuentra en el corazón de la zona sur de Querétaro, con <strong>la terraza más fresca del sur de la ciudad</strong>, ambiente familiar y la sazón del Pacífico esperándote de martes a domingo, de 9:00 a 18:00 hrs.
+                Nuestro muelle se encuentra en el corazón de la zona sur de Querétaro, con <strong>la terraza más fresca del sur de la ciudad</strong>, ambiente familiar y la sazón del Pacífico esperándote de lunes a domingo, de 9:00 a 18:30 hrs.
               </p>
               <div class="nap-block">
                 <strong>Mariscos Muelle 27</strong>
                 Jardín de Alcatraz s/n<br>
                 Jardines del Cimatario, Querétaro<br>
                 Tel: <a href="tel:+524428085907">442 808 5907</a><br>
-                Mar–Dom · 9:00–18:00 hrs
+                Lun–Dom · 9:00–18:30 hrs
               </div>
               <div class="signature-cta">
                 <a href="#reservar" class="btn btn-primary" data-open="wa" data-magnetic>Reservar ahora</a>
-                <a href="./contacto/" class="btn btn-ghost">Cómo llegar</a>
+                <a href="https://maps.app.goo.gl/69PYc47XCn6sxDsC8" class="btn btn-ghost" target="_blank" rel="noopener" data-event="directions_click">Cómo llegar</a>
               </div>
             </div>
             <div class="map-frame reveal reveal-delay-2">
@@ -373,6 +485,46 @@
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Mapa de Mariscos Muelle 27 en Jardines del Cimatario, Querétaro"></iframe>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= COMIDA PARA LLEVAR ========================= -->
+    <section class="wood-bg" style="padding: var(--space-md) 0 var(--space-lg);" aria-labelledby="llevar-title">
+      <div class="container">
+        <div class="scroll-panel">
+          <div class="section-heading fade-cycle">
+            <div class="overline">Provisiones para llevar</div>
+            <h2 id="llevar-title" class="fill-text fill-text--dark">
+              Pídelo y pasa por él al muelle
+            </h2>
+            <p class="bitacora-lead">
+              ¿Tienes prisa o quieres disfrutar tus mariscos frescos en casa? Llámanos o mándanos WhatsApp con tu pedido, te confirmamos cuándo está listo y solo pasas a recogerlo. Misma cocina, mismo sazón de la costa de Michoacán, en una bolsa con todo bien empacado para el camino.
+            </p>
+          </div>
+
+          <ol class="pickup-steps">
+            <li class="pickup-step reveal">
+              <span class="pickup-step-num">01</span>
+              <h3>Haz tu pedido</h3>
+              <p>Escríbenos por WhatsApp al <strong>442 808 5907</strong> o llámanos directo. Tenemos toda la carta lista para llevar: aguachiles, ceviches, camarones, mojarras, pozole los jueves y viernes, y desayunos desde las 9 AM.</p>
+            </li>
+            <li class="pickup-step reveal reveal-delay-1">
+              <span class="pickup-step-num">02</span>
+              <h3>Te decimos cuándo</h3>
+              <p>Te confirmamos el tiempo exacto según lo que pediste y cómo estamos en cocina. Así no esperas en la barra ni cargas con bolsa caliente más tiempo del necesario.</p>
+            </li>
+            <li class="pickup-step reveal reveal-delay-2">
+              <span class="pickup-step-num">03</span>
+              <h3>Pasa al muelle</h3>
+              <p>Llegas, recoges tu pedido empacado en el muelle y listo. Pago en efectivo o tarjeta al recoger. Estacionamiento sobre Jardín de Alcatraz, justo enfrente.</p>
+            </li>
+          </ol>
+
+          <div class="pickup-ctas">
+            <a href="#reservar" class="btn btn-primary" data-open="wa" data-magnetic data-event="takeaway_click">Pedir por WhatsApp</a>
+            <a href="tel:+524428085907" class="btn btn-ghost" data-open="call" data-magnetic data-event="takeaway_call">Llamar al 442 808 5907</a>
           </div>
         </div>
       </div>
@@ -437,18 +589,15 @@
             <h2 id="porque-title">Por qué Mariscos Muelle 27</h2>
           </div>
           <div class="bento">
-            <div class="bento-card reveal">
-              <span class="bento-card-icon">🐟</span>
+            <div class="bento-card bento-card--photo reveal" style="background-image:url('./img/torre-de-mariscos-muelle-27-queretaro.webp')">
               <h3>Mariscos frescos cada día</h3>
               <p>Pesca del día, sin conservadores. El producto llega con frecuencia para que la mesa tenga siempre lo mejor del Pacífico.</p>
             </div>
-            <div class="bento-card reveal reveal-delay-1">
-              <span class="bento-card-icon">🌿</span>
+            <div class="bento-card bento-card--photo reveal reveal-delay-1" style="background-image:url('./img/terraza-mariscos-muelle-27-jardines-cimatario.webp')">
               <h3>La terraza más fresca del sur</h3>
               <p>Aire corrido, sombra natural y sin el calor del mediodía. Pensada para comer con calma en familia.</p>
             </div>
-            <div class="bento-card reveal reveal-delay-2">
-              <span class="bento-card-icon">👨‍👩‍👧‍👦</span>
+            <div class="bento-card bento-card--photo reveal reveal-delay-2" style="background-image:url('./img/salon-cupula-mariscos-muelle-27-queretaro.webp')">
               <h3>Ambiente familiar</h3>
               <p>Menú para peques, mesas grandes, tiempos sin prisa. Se come, se conversa y se regresa.</p>
             </div>
@@ -507,7 +656,7 @@
             <details class="faq-item reveal reveal-delay-1">
               <summary>¿Tienen desayunos?</summary>
               <div class="faq-item-body">
-                Sí, servimos desayunos desde las 9:00 de la mañana, de martes a domingo: chilaquiles, huevos al gusto, antojos con el toque marino y más.
+                Sí, servimos desayunos desde las 9:00 de la mañana, de lunes a domingo: chilaquiles, huevos al gusto, antojos con el toque marino y más.
               </div>
             </details>
             <details class="faq-item reveal reveal-delay-2">
@@ -519,13 +668,19 @@
             <details class="faq-item reveal reveal-delay-2">
               <summary>¿Cuál es su horario?</summary>
               <div class="faq-item-body">
-                Abrimos de martes a domingo, de 9:00 a 18:00 hrs. Cerrados los lunes.
+                Abrimos todos los días, de lunes a domingo, de 9:00 a 18:30 hrs.
               </div>
             </details>
             <details class="faq-item reveal reveal-delay-3">
               <summary>¿Aceptan reservaciones?</summary>
               <div class="faq-item-body">
                 Sí, puedes reservar llamando al <a href="tel:+524428085907" style="color:var(--escarlate);font-weight:600;">442 808 5907</a> o por WhatsApp.
+              </div>
+            </details>
+            <details class="faq-item reveal reveal-delay-3">
+              <summary>¿Tienen comida para llevar?</summary>
+              <div class="faq-item-body">
+                Sí, toda la carta se prepara para llevar. Haz tu pedido por <a href="tel:+524428085907" style="color:var(--escarlate);font-weight:600;">WhatsApp o llamando al 442 808 5907</a>, te confirmamos en cuánto tiempo está listo y solo pasas a recogerlo a Jardín de Alcatraz s/n, Jardines del Cimatario.
               </div>
             </details>
           </div>
@@ -557,6 +712,7 @@
         <p>
           Bitácora de sabor anclada en Jardines del Cimatario. Mariscos frescos de la costa de Michoacán, servidos en Querétaro.
         </p>
+        <div class="footer-social"><a href="https://www.facebook.com/people/Mariscos-Muelle-27/61590435500715/" target="_blank" rel="noopener me" aria-label="Facebook de Mariscos Muelle 27" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073c0 6.026 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.489h-2.796v8.437C19.612 23.094 24 18.1 24 12.073z"/></svg></a><a href="https://www.instagram.com/muellee27" target="_blank" rel="noopener me" aria-label="Instagram de Mariscos Muelle 27" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308 1.266-.058 1.646-.07 4.85-.07M12 0C8.741 0 8.332.015 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.985 8.741 24 12 24s3.668-.015 4.948-.072c1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038.057-1.28.072-1.689.072-4.948s-.015-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.015 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div>
       </div>
       <div>
         <h4>Navegación</h4>
@@ -575,7 +731,7 @@
           Jardines del Cimatario<br>
           Querétaro, Qro.<br>
           <a href="tel:+524428085907">442 808 5907</a><br>
-          Mar–Dom · 9:00–18:00
+          Lun–Dom · 9:00–18:30
         </p>
       </div>
       <div>
@@ -584,8 +740,8 @@
           <li><a href="./aviso-de-privacidad/">Aviso de privacidad</a></li>
           <li><a href="./terminos-y-condiciones/">Términos y condiciones</a></li>
           <li><a href="./contacto/">Contacto</a></li>
-          <li><a href="https://instagram.com/muelle27_queretaro" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://facebook.com/muelle27_queretaro" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/muellee27" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/people/Mariscos-Muelle-27/61590435500715/" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </div>
     </div>
@@ -645,6 +801,6 @@
     </div>
   </div>
 
-  <script src="./js/main.js?v=20260425d" defer></script>
+  <script src="./js/main.js?v=1170bf6f" defer></script>
 </body>
 </html>

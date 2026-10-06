@@ -1,6 +1,12 @@
 # Redirecciones Cloudflare Pages — Mariscos Muelle 27
 # Formato: /origen /destino codigo-http
 
+# Short link para Google Business Profile — tracking de origen "Maps"
+# Cliente lo pone en GBP como URL del sitio. Cuando alguien hace click en
+# "Sitio web" desde la ficha de Google Maps, llega con UTMs.
+/maps  /?utm_source=google&utm_medium=organic&utm_campaign=gbp_maps  302
+/maps/  /?utm_source=google&utm_medium=organic&utm_campaign=gbp_maps  302
+
 # Red de seguridad: si por error alguien sube un .html suelto,
 # redirige a la versión canónica con slash.
 # (Cloudflare Pages ya hace esto automáticamente para carpeta/index.html)

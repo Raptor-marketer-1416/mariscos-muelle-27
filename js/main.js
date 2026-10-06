@@ -66,6 +66,61 @@ function initMobileMenu() {
   });
 }
 
+/* ================= Dropdown del header (Carta ▾) ================= */
+function initHeaderDropdown() {
+  const dropdowns = document.querySelectorAll('.has-dropdown');
+  if (!dropdowns.length) return;
+
+  dropdowns.forEach((dd) => {
+    const btn = dd.querySelector('.dropdown-toggle');
+    if (!btn) return;
+
+    const close = () => {
+      dd.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    };
+    const open = () => {
+      // cerrar otros dropdowns abiertos
+      dropdowns.forEach((other) => { if (other !== dd) other.classList.remove('is-open'); });
+      dd.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      dd.classList.contains('is-open') ? close() : open();
+    });
+
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { close(); btn.focus(); }
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        open();
+        const firstLink = dd.querySelector('.dropdown-menu a');
+        firstLink && firstLink.focus();
+      }
+    });
+  });
+
+  // click fuera cierra todos los dropdowns
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-dropdown')) {
+      dropdowns.forEach((dd) => dd.classList.remove('is-open'));
+      dropdowns.forEach((dd) => {
+        const btn = dd.querySelector('.dropdown-toggle');
+        btn && btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // tecla Escape global
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdowns.forEach((dd) => dd.classList.remove('is-open'));
+    }
+  });
+}
+
 /* ================= Fill text (palabras que se "encienden") ================= */
 function initTextFill() {
   const containers = document.querySelectorAll('.fill-text');
@@ -419,6 +474,7 @@ function initRipple() {
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initMobileMenu();
+  initHeaderDropdown();
   initTextFill();
   initReveal();
   initFadeCycle();
