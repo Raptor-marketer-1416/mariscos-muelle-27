@@ -292,7 +292,7 @@ function initModals() {
 
       const msg = `Hola, soy ${name}. Me interesa: ${service}.`;
       window.open(
-        `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,
+        `https://api.whatsapp.com/send?phone=${CONFIG.whatsapp}&text=${encodeURIComponent(msg)}`,
         '_blank',
         'noopener'
       );

@@ -1,3 +1,96 @@
+/* ===== Tipografías autoalojadas (accesibilidad-pagespeed, Regla 11) — 2026-10-09 =====
+   Mismos archivos de Google Fonts, solo latin + latin-ext. Lora y Work Sans son variables. */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/dm-serif-display-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/lora-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/lora-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/work-sans-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('../fonts/work-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ==========================================================================
    MARISCOS MUELLE 27 — Stylesheet Global Premium
    Identidad: Bitácora del Capitán (adaptada al logotipo real del cliente)
@@ -523,7 +616,7 @@ h1, h2, h3, h4 {
 
 .hero-overline {
   color: var(--brass-bright);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem; /* pegado al H1: el texto va más separado (ritmo del título) */
 }
 
 .hero-overline::before,
@@ -1486,7 +1579,7 @@ footer {
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
 
-footer h4 {
+footer h3 {
   font-family: var(--font-display);
   font-size: 1.2rem;
   color: var(--coral-warm);
@@ -1533,6 +1626,7 @@ footer ul { display: flex; flex-direction: column; gap: 0.4rem; }
   color: var(--rope);
   letter-spacing: 0.12em;
 }
+.footer-credit a { color: inherit; font: inherit; letter-spacing: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ==========================================
    20. BOTONES FLOTANTES (WhatsApp + Llamada)
@@ -2118,6 +2212,7 @@ img.polaroid-photo {
   font-size: var(--text-base);
   line-height: 1.7;
   margin-bottom: 1.2rem;
+  max-width: 68ch; /* medida cómoda: 45-90 caracteres por renglón */
 }
 
 .menu-row {
@@ -3195,5 +3290,17 @@ img.polaroid-photo {
 }
 .reviews-section .rev-car .rev-count,
 .reviews-section .rev-car .rev-empty { color: var(--parchment); }
-/* el componente oculta pausa/navegación con [hidden]; sin esta regla su display:grid/flex lo anula */
-.reviews-section .rev-car [hidden] { display: none !important; }
+
+/* ===== Blog: prosa + tarjeta de «dato clave» (composición de escritorio, 2026-10-09) ===== */
+.blog-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.6rem; max-width: 1100px; margin: 0 auto; align-items: start; }
+.blog-prose { max-width: 760px; min-width: 0; }
+.blog-dato { background: var(--cream); border: 1px solid rgba(74, 44, 26, 0.18); border-left: 4px solid var(--escarlate); border-radius: var(--radius-md); padding: 1.2rem 1.3rem; color: var(--ink); }
+.blog-dato-tit { font-family: var(--font-ui); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--wood-dark); margin: 0 0 0.7rem; }
+.blog-dato ul { list-style: none; margin: 0; padding: 0; }
+.blog-dato li { font-size: 0.95rem; line-height: 1.55; padding: 0.45rem 0; border-top: 1px dashed rgba(74, 44, 26, 0.2); }
+.blog-dato li:first-child { border-top: 0; padding-top: 0; }
+.blog-dato-btn { display: inline-block; margin-top: 1rem; }
+@media (min-width: 1024px) {
+  .blog-row { grid-template-columns: minmax(0, 760px) 280px; gap: 2.6rem; justify-content: center; }
+  .blog-dato { position: sticky; top: 110px; margin-top: 0.6rem; }
+}
