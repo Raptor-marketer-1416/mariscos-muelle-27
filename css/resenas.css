@@ -33,7 +33,7 @@ span[data-res],.rt{display:inline!important;gap:0}
 /* ---- [hidden] SIEMPRE gana (2026-10-09, Mariscos Muelle 27): el JS oculta la pausa (reduced-motion / sin
    autoplay) y la barra de navegación (Worker caído) con el atributo hidden, pero los display:grid/flex de
    abajo lo anulaban y quedaban visibles un botón inútil y «Cargando reseñas…» junto al mensaje de error ---- */
-.rev-car [hidden],.rev-resumen [hidden]{display:none!important}
+.rev-car [hidden],.rev-resumen [hidden],.rev-panel [hidden]{display:none!important}
 
 /* ---- contenedor y pista ---- */
 .rev-car{min-width:0;font-family:var(--rv-fuente,inherit)}
