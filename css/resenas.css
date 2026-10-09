@@ -46,19 +46,24 @@ span[data-res],.rt{display:inline!important;gap:0}
 .rev-car .rev{flex:0 0 var(--rv-ancho,clamp(215px,28%,258px));scroll-snap-align:start;display:flex;flex-direction:column;margin:0;
   background:var(--rv-fondo,#fff);color:var(--rv-texto,#1c1c1c);border-radius:var(--rv-radio,16px);padding:1.15rem;
   border:2px solid var(--rv-borde,var(--rv-acento,#1a73e8));box-shadow:0 8px 24px rgba(12,12,12,.05)}
-.rev-car .rev figcaption{display:flex;align-items:center;gap:.7rem;margin-bottom:.85rem}
+.rev-car .rev{position:relative}
+.rev-car .rev figcaption{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem;padding-right:1.6rem;min-width:0}
+.rev-car .rev figcaption>span{min-width:0}
+.rev-car .rev .rev-g{position:absolute;top:1rem;right:1rem;width:20px;height:20px;line-height:0}
+.rev-car .rev .rev-g svg{width:20px;height:20px;display:block}
+.rev-car .rev-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .rev-car .rev .av{position:relative;overflow:hidden;width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;
   background:var(--rv-oscuro,#0a0a0a);color:var(--rv-icono,var(--rv-acento,#1a73e8));font-family:var(--rv-fuente-titulo,inherit);font-weight:800}
 .rev-car .rev .av b{font-size:1rem;display:block}
-.rev-car .rev figcaption b{display:block;font-weight:700;font-size:.92rem;overflow-wrap:anywhere}
+.rev-car .rev figcaption b{display:block;font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rev-car .rev figcaption span span{display:block;font-size:.78rem;color:var(--rv-texto-2,#5b5f5b)}
-.rev-car .rev .gs{margin:0 0 .75rem}
-.rev-car .rev blockquote{margin:0 0 1rem;flex:1 1 auto}
+.rev-car .rev .gs{margin:0 0 .6rem}
+.rev-car .rev blockquote{margin:0 0 .7rem;flex:1 1 auto}
 .rev-car .rev blockquote p{margin:0;color:inherit;font-size:.94rem;line-height:1.5}
-.rev-car .rev.long blockquote p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden}
+.rev-car .rev.long blockquote p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
 .rev-car .rev.long.open blockquote p{display:block;-webkit-line-clamp:unset}
 .no-js .rev-car .rev.long blockquote p{display:block;-webkit-line-clamp:unset}
-.rev-car .rev-more{align-self:flex-start;margin:-.4rem 0 1rem;padding:.2rem 0;background:none;border:0;border-bottom:2px solid var(--rv-acento,#1a73e8);color:inherit;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
+.rev-car .rev-more{align-self:flex-start;margin:-.3rem 0 0;padding:.2rem 0;background:none;border:0;border-bottom:2px solid var(--rv-acento,#1a73e8);color:inherit;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
 .rev-car .rev-more:focus-visible{outline:3px solid var(--rv-acento,#1a73e8);outline-offset:3px}
 
 /* ---- tarjeta destacada (la primera, si su texto es corto) ---- */
@@ -69,7 +74,7 @@ span[data-res],.rt{display:inline!important;gap:0}
 .rev-car .rev.hl .rev-more{color:var(--rv-oscuro-texto,#fff)}
 
 /* ---- esqueleto mientras cargan ---- */
-.rev-car .rev.sk{min-height:var(--rv-alto-esqueleto,332px);border-color:transparent;box-shadow:none;
+.rev-car .rev.sk{min-height:var(--rv-alto-esqueleto,230px);border-color:transparent;box-shadow:none;
   background:linear-gradient(100deg,#fff 30%,#eceee8 50%,#fff 70%) 0 0/220% 100%;animation:rvsk 1.5s linear infinite}
 @keyframes rvsk{to{background-position:-220% 0}}
 
@@ -116,35 +121,30 @@ span[data-res],.rt{display:inline!important;gap:0}
 }
 
 /* ============================================================================
-   PANEL DE CALIFICACION (.rev-panel) — PREDETERMINADO desde 2026-10-09 (Mariscos Muelle 27)
-   Logo OFICIAL completo de Google (SVG original, sin alterar, a color, sobre fondo claro) · etiqueta honesta segun
-   el promedio · numero grande + estrellas con relleno exacto · total con enlace a Maps · barras por estrella ·
-   resenas de los ultimos 30 dias. SIN boton de «escribir una reseña» (regla de Alberto, 2026-10-09: la invitacion a
-   reseñar se hace a clientes ya atendidos por el canal de cada negocio; en el sitio solo abre la puerta a reseñas falsas).
-   Variables extra: --rv-panel-fondo (def = --rv-fondo, claro) · --rv-panel-ancho (def 290px)
+   PANEL DE CALIFICACION (.rev-panel) — PREDETERMINADO (2026-10-09, ajustado con Alberto el mismo dia)
+   SIN fondo propio: se funde con la seccion. Tipografia DEL SITIO y colores que se adaptan al fondo:
+     --rv-panel-texto    color del texto (def: hereda el de la seccion; en fondo oscuro, claro)
+     --rv-panel-texto-2  texto secundario (def: el mismo con 80% de opacidad)
+     --rv-panel-acento   etiqueta «Excelente», subrayados y borde de la pastilla (def = --rv-acento)
+     --rv-fuente-ui      tipografia de etiquetas pequeñas («Reseñas») (def = --rv-fuente)
+     --rv-panel-ancho    ancho de la columna (def 280px)
+   Logo OFICIAL de Google (SVG sin alterar, a color) SIN fondo ni placa (Alberto, 2026-10-09: la placa blanca se ve
+   como parche). Se funde con la seccion igual que el resto del panel.
+   SIN barras por estrella y SIN boton de «escribir una reseña» (reglas de Alberto, 2026-10-09).
    ============================================================================ */
-.rev-layout{display:grid;gap:1.6rem;align-items:stretch}
-@media (min-width:900px){.rev-layout{grid-template-columns:minmax(240px,var(--rv-panel-ancho,290px)) minmax(0,1fr);align-items:center}}
-.rev-panel{position:relative;display:flex;flex-direction:column;align-items:center;gap:.85rem;text-align:center;
-  background:var(--rv-panel-fondo,var(--rv-fondo,#fff));color:var(--rv-texto,#1c1c1c);font-family:var(--rv-fuente,inherit);
-  border:2px solid var(--rv-borde,var(--rv-acento,#1a73e8));border-radius:calc(var(--rv-radio,16px) + 6px);
-  padding:1.7rem 1.5rem 1.5rem;box-shadow:0 22px 48px rgba(0,0,0,.22);max-width:440px;width:100%;margin:0 auto}
-.rev-panel .rev-glogo-full{display:block;width:118px;height:auto}
-.rev-panel .rev-panel-sub{display:block;margin-top:-.35rem;font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rv-texto-2,#5b5f5b)}
-.rev-panel .rev-etq{margin:.2rem 0 0;font-family:var(--rv-fuente-titulo,inherit);font-weight:800;font-size:1.25rem;letter-spacing:.16em;text-transform:uppercase}
-.rev-panel .rev-score{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap}
-.rev-panel .rev-num{font-family:var(--rv-fuente-titulo,inherit);font-weight:800;font-size:3.3rem;line-height:1;letter-spacing:-.02em}
+.rev-layout{display:grid;gap:1.8rem;align-items:center}
+@media (min-width:900px){.rev-layout{grid-template-columns:minmax(220px,var(--rv-panel-ancho,280px)) minmax(0,1fr)}}
+.rev-panel{display:flex;flex-direction:column;align-items:center;gap:.7rem;text-align:center;background:none;border:0;box-shadow:none;padding:0;
+  color:var(--rv-panel-texto,inherit);font-family:var(--rv-fuente,inherit);max-width:420px;width:100%;margin:0 auto}
+.rev-panel .rev-glogo-full{display:block;width:160px;height:auto;background:none}
+.rev-panel .rev-etq{margin:.35rem 0 0;font-family:var(--rv-fuente-titulo,inherit);font-weight:inherit;font-size:clamp(1.6rem,2.4vw,2rem);line-height:1.1;color:var(--rv-panel-acento,var(--rv-acento,#1a73e8))}
+.rev-panel .rev-score{display:flex;align-items:center;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.rev-panel .rev-num{font-family:var(--rv-fuente-titulo,inherit);font-weight:inherit;font-size:3.2rem;line-height:1}
 .rev-panel .gs{display:block;position:relative;width:140px;height:26px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 17'%3E%3Cpath fill='%23DADCE0' d='M9 .9l2.5 5.3 5.8.7-4.3 4 1.1 5.7L9 13.7 3.9 16.6 5 10.9.7 6.9l5.8-.7z'/%3E%3C/svg%3E") 0 0/28px 26px repeat-x}
 .rev-panel .gs::after{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(var(--n,5) * 28px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 17'%3E%3Cpath fill='%23FBBC04' d='M9 .9l2.5 5.3 5.8.7-4.3 4 1.1 5.7L9 13.7 3.9 16.6 5 10.9.7 6.9l5.8-.7z'/%3E%3C/svg%3E") 0 0/28px 26px repeat-x}
-.rev-panel .rev-total{color:inherit;font-weight:700;text-decoration:underline;text-decoration-color:var(--rv-acento,#1a73e8);text-decoration-thickness:2px;text-underline-offset:4px}
-.rev-panel .rev-total:focus-visible{outline:3px solid var(--rv-acento,#1a73e8);outline-offset:3px;border-radius:4px}
-.rev-panel .rev-dist{list-style:none;margin:.3rem 0 0;padding:.9rem 0 0;width:100%;border-top:1px solid rgba(128,128,128,.25);display:grid;gap:.4rem}
-.rev-panel .rev-dist li{display:grid;grid-template-columns:2.4em minmax(0,1fr) 2.6em;align-items:center;gap:.6rem;font-size:.85rem;color:var(--rv-texto-2,#5b5f5b)}
-.rev-panel .rev-dist li>span:first-child{text-align:left;font-weight:700;color:var(--rv-texto,#1c1c1c)}
-.rev-panel .rev-dist .rev-dist-bar{display:block;height:8px;border-radius:99px;background:rgba(128,128,128,.18);overflow:hidden}
-.rev-panel .rev-dist .rev-dist-bar i{display:block;height:100%;width:0;border-radius:inherit;background:#FBBC04;transition:width .9s ease}
-.rev-panel .rev-dist .rev-dist-n{text-align:right;font-variant-numeric:tabular-nums}
-.rev-panel .rev-recientes{margin:.2rem 0 0;display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;
-  padding:.45rem .85rem;border-radius:99px;border:1px solid var(--rv-borde,var(--rv-acento,#1a73e8))}
+.rev-panel .rev-total{color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--rv-panel-acento,var(--rv-acento,#1a73e8));text-decoration-thickness:2px;text-underline-offset:4px}
+.rev-panel .rev-total:focus-visible{outline:3px solid var(--rv-panel-acento,var(--rv-acento,#1a73e8));outline-offset:3px;border-radius:4px}
+.rev-panel .rev-recientes{margin:.3rem 0 0;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--rv-fuente-ui,var(--rv-fuente,inherit));font-size:.85rem;font-weight:600;
+  padding:.45rem .9rem;border-radius:99px;border:1px solid var(--rv-panel-acento,var(--rv-acento,#1a73e8))}
 .rev-panel .rev-recientes::before{content:"";width:8px;height:8px;border-radius:50%;background:#34A853;flex:none}
-@media (prefers-reduced-motion:reduce){.rev-panel .rev-dist .rev-dist-bar i{transition:none}}
+@media (prefers-reduced-motion:reduce){
