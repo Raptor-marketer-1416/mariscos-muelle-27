@@ -1,6 +1,6 @@
-# Desayunos en Jardines del Cimatario | Mariscos Muelle 27
+# Desayunos en Querétaro con Terraza · Desde $110 | Muelle 27
 
-> Desayunos desde las 9 AM en Mariscos Muelle 27, Jardines del Cimatario. Huevos al gusto, chilaquiles, omelettes, hot cakes y café de olla. Lun-Dom.
+> Desayunos en Querétaro desde las 9 AM en Jardines del Cimatario: chilaquiles rojos o verdes, enchiladas queretanas, hot cakes y café de olla en terraza.
 
 URL: https://mariscosmuelle27.com/carta/desayunos/
 
@@ -8,7 +8,7 @@ Saltar al contenido principal
 
 Capítulo VI · Desde 9 AM
 
-# Desayunos en Jardines del Cimatario
+# Desayunos en Querétaro, en la terraza de Jardines del Cimatario
 
 Desde las 9:00 de la mañana, de lunes a domingo. Huevos al gusto, chilaquiles, omelettes, enchiladas, molletes, hot cakes, wafles y café de olla. **Todos los desayunos incluyen jugo o fruta y café sin refil.**
 
