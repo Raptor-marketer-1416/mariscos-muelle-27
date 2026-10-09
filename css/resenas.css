@@ -114,3 +114,37 @@ span[data-res],.rt{display:inline!important;gap:0}
   .rev-car .rev-track{scroll-behavior:auto}
   .rev-car .rev.sk{animation:none}
 }
+
+/* ============================================================================
+   PANEL DE CALIFICACION (.rev-panel) — PREDETERMINADO desde 2026-10-09 (Mariscos Muelle 27)
+   Logo OFICIAL completo de Google (SVG original, sin alterar, a color, sobre fondo claro) · etiqueta honesta segun
+   el promedio · numero grande + estrellas con relleno exacto · total con enlace a Maps · barras por estrella ·
+   resenas de los ultimos 30 dias. SIN boton de «escribir una reseña» (regla de Alberto, 2026-10-09: la invitacion a
+   reseñar se hace a clientes ya atendidos por el canal de cada negocio; en el sitio solo abre la puerta a reseñas falsas).
+   Variables extra: --rv-panel-fondo (def = --rv-fondo, claro) · --rv-panel-ancho (def 290px)
+   ============================================================================ */
+.rev-layout{display:grid;gap:1.6rem;align-items:stretch}
+@media (min-width:900px){.rev-layout{grid-template-columns:minmax(240px,var(--rv-panel-ancho,290px)) minmax(0,1fr);align-items:center}}
+.rev-panel{position:relative;display:flex;flex-direction:column;align-items:center;gap:.85rem;text-align:center;
+  background:var(--rv-panel-fondo,var(--rv-fondo,#fff));color:var(--rv-texto,#1c1c1c);font-family:var(--rv-fuente,inherit);
+  border:2px solid var(--rv-borde,var(--rv-acento,#1a73e8));border-radius:calc(var(--rv-radio,16px) + 6px);
+  padding:1.7rem 1.5rem 1.5rem;box-shadow:0 22px 48px rgba(0,0,0,.22);max-width:440px;width:100%;margin:0 auto}
+.rev-panel .rev-glogo-full{display:block;width:118px;height:auto}
+.rev-panel .rev-panel-sub{display:block;margin-top:-.35rem;font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rv-texto-2,#5b5f5b)}
+.rev-panel .rev-etq{margin:.2rem 0 0;font-family:var(--rv-fuente-titulo,inherit);font-weight:800;font-size:1.25rem;letter-spacing:.16em;text-transform:uppercase}
+.rev-panel .rev-score{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.rev-panel .rev-num{font-family:var(--rv-fuente-titulo,inherit);font-weight:800;font-size:3.3rem;line-height:1;letter-spacing:-.02em}
+.rev-panel .gs{display:block;position:relative;width:140px;height:26px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 17'%3E%3Cpath fill='%23DADCE0' d='M9 .9l2.5 5.3 5.8.7-4.3 4 1.1 5.7L9 13.7 3.9 16.6 5 10.9.7 6.9l5.8-.7z'/%3E%3C/svg%3E") 0 0/28px 26px repeat-x}
+.rev-panel .gs::after{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(var(--n,5) * 28px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 17'%3E%3Cpath fill='%23FBBC04' d='M9 .9l2.5 5.3 5.8.7-4.3 4 1.1 5.7L9 13.7 3.9 16.6 5 10.9.7 6.9l5.8-.7z'/%3E%3C/svg%3E") 0 0/28px 26px repeat-x}
+.rev-panel .rev-total{color:inherit;font-weight:700;text-decoration:underline;text-decoration-color:var(--rv-acento,#1a73e8);text-decoration-thickness:2px;text-underline-offset:4px}
+.rev-panel .rev-total:focus-visible{outline:3px solid var(--rv-acento,#1a73e8);outline-offset:3px;border-radius:4px}
+.rev-panel .rev-dist{list-style:none;margin:.3rem 0 0;padding:.9rem 0 0;width:100%;border-top:1px solid rgba(128,128,128,.25);display:grid;gap:.4rem}
+.rev-panel .rev-dist li{display:grid;grid-template-columns:2.4em minmax(0,1fr) 2.6em;align-items:center;gap:.6rem;font-size:.85rem;color:var(--rv-texto-2,#5b5f5b)}
+.rev-panel .rev-dist li>span:first-child{text-align:left;font-weight:700;color:var(--rv-texto,#1c1c1c)}
+.rev-panel .rev-dist .rev-dist-bar{display:block;height:8px;border-radius:99px;background:rgba(128,128,128,.18);overflow:hidden}
+.rev-panel .rev-dist .rev-dist-bar i{display:block;height:100%;width:0;border-radius:inherit;background:#FBBC04;transition:width .9s ease}
+.rev-panel .rev-dist .rev-dist-n{text-align:right;font-variant-numeric:tabular-nums}
+.rev-panel .rev-recientes{margin:.2rem 0 0;display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;
+  padding:.45rem .85rem;border-radius:99px;border:1px solid var(--rv-borde,var(--rv-acento,#1a73e8))}
+.rev-panel .rev-recientes::before{content:"";width:8px;height:8px;border-radius:50%;background:#34A853;flex:none}
+@media (prefers-reduced-motion:reduce){.rev-panel .rev-dist .rev-dist-bar i{transition:none}}

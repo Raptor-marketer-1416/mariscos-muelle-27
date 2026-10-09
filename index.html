@@ -22,8 +22,8 @@
   <meta property="og:url" content="https://mariscosmuelle27.com/">
   <meta property="og:image" content="https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp">
 
-  <link rel="stylesheet" href="./css/styles.css?v=dc81cb8a">
-  <link rel="stylesheet" href="./css/resenas.css?v=8d760733">
+  <link rel="stylesheet" href="./css/styles.css?v=b4529dca">
+  <link rel="stylesheet" href="./css/resenas.css?v=45821248">
 
   <!-- Schema JSON-LD: Restaurant + LocalBusiness + FAQPage + WebSite -->
 
@@ -446,23 +446,46 @@
 
       <!-- Carrusel de reseñas de Google (carrusel-resenas-raptor): se llena desde el Worker, sin terceros -->
       <div class="container reviews-embed">
-      <div class="rev-car" data-resenas="https://resenas.agconsultorweb.com/v1/mariscos-muelle-27.json" data-maps="https://maps.google.com/maps?cid=14616200800993696281">
-        <div class="rev-track" role="region" aria-label="Reseñas de clientes en Google" tabindex="0" aria-busy="true">
-          <figure class="rev sk" aria-hidden="true"></figure>
-          <figure class="rev sk" aria-hidden="true"></figure>
-          <figure class="rev sk" aria-hidden="true"></figure>
-          <figure class="rev sk" aria-hidden="true"></figure>
-        </div>
-        <div class="rev-nav">
-          <div class="rev-btns">
-            <button type="button" class="rev-btn" data-dir="-1" aria-label="Reseñas anteriores" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <button type="button" class="rev-btn rev-pause" aria-label="Pausar el avance automático" disabled><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
-            <button type="button" class="rev-btn" data-dir="1" aria-label="Más reseñas" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          </div>
-          <p class="rev-count">Cargando reseñas…</p>
-        </div>
-        <noscript><p class="rev-empty">Lee las reseñas de Mariscos Muelle 27 directamente <a href="https://maps.google.com/maps?cid=14616200800993696281" target="_blank" rel="noopener">en Google Maps</a>.</p></noscript>
+        <div class="rev-layout">
+    <!-- PANEL DE CALIFICACION (predeterminado). Logo OFICIAL de Google: SVG original sin alterar, a color, sobre fondo
+         claro (lineamientos de marca). Las cifras las mantiene al dia el JS; los valores escritos son el respaldo.
+         NUNCA agregar un boton de «escribir una reseña» (regla de Alberto, 2026-10-09). -->
+    <aside class="rev-panel" aria-label="Calificación en Google">
+      <svg class="rev-glogo-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 92" width="272" height="92" role="img" aria-label="Google"><path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/><path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/><path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/><path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/><path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/><path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/></svg>
+      <span class="rev-panel-sub">Reseñas</span>
+      <p class="rev-etq" data-res="etiqueta">Excelente</p>
+      <div class="rev-score">
+        <span class="rev-num" data-res="prom">4.8</span>
+        <span class="gs" data-res="gs" role="img" aria-label="4.8 de 5 estrellas" style="--n:4.8"></span>
       </div>
+      <a class="rev-total" href="https://maps.google.com/maps?cid=14616200800993696281" target="_blank" rel="noopener"><span class="rt">A partir de <span data-res="total">108</span> reseñas en Google</span></a>
+      <ul class="rev-dist" data-res="dist" aria-label="Reseñas por número de estrellas">
+        <li data-k="5" aria-label="5 estrellas: 99"><span>5 ★</span><span class="rev-dist-bar" aria-hidden="true"><i style="width:91.7%"></i></span><span class="rev-dist-n">99</span></li>
+        <li data-k="4" aria-label="4 estrellas: 5"><span>4 ★</span><span class="rev-dist-bar" aria-hidden="true"><i style="width:4.6%"></i></span><span class="rev-dist-n">5</span></li>
+        <li data-k="3" aria-label="3 estrellas: 2"><span>3 ★</span><span class="rev-dist-bar" aria-hidden="true"><i style="width:1.9%"></i></span><span class="rev-dist-n">2</span></li>
+        <li data-k="2" aria-label="2 estrellas: 0"><span>2 ★</span><span class="rev-dist-bar" aria-hidden="true"><i style="width:0.0%"></i></span><span class="rev-dist-n">0</span></li>
+        <li data-k="1" aria-label="1 estrellas: 2"><span>1 ★</span><span class="rev-dist-bar" aria-hidden="true"><i style="width:1.9%"></i></span><span class="rev-dist-n">2</span></li>
+      </ul>
+      <p class="rev-recientes" data-res="recientes" hidden></p>
+    </aside>
+        <div class="rev-car" data-resenas="https://resenas.agconsultorweb.com/v1/mariscos-muelle-27.json" data-maps="https://maps.google.com/maps?cid=14616200800993696281">
+          <div class="rev-track" role="region" aria-label="Reseñas de clientes en Google" tabindex="0" aria-busy="true">
+            <figure class="rev sk" aria-hidden="true"></figure>
+            <figure class="rev sk" aria-hidden="true"></figure>
+            <figure class="rev sk" aria-hidden="true"></figure>
+            <figure class="rev sk" aria-hidden="true"></figure>
+          </div>
+          <div class="rev-nav">
+            <div class="rev-btns">
+              <button type="button" class="rev-btn" data-dir="-1" aria-label="Reseñas anteriores" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button type="button" class="rev-btn rev-pause" aria-label="Pausar el avance automático" disabled><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+              <button type="button" class="rev-btn" data-dir="1" aria-label="Más reseñas" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+            <p class="rev-count">Cargando reseñas…</p>
+          </div>
+          <noscript><p class="rev-empty">Lee las reseñas de Mariscos Muelle 27 directamente <a href="https://maps.google.com/maps?cid=14616200800993696281" target="_blank" rel="noopener">en Google Maps</a>.</p></noscript>
+        </div>
+        </div>
       </div>
 
     </section>
@@ -820,6 +843,6 @@
   </div>
 
   <script src="./js/main.js?v=792454ae" defer></script>
-  <script src="./js/resenas.js?v=af8a0c0a" defer></script>
+  <script src="./js/resenas.js?v=cf3c7314" defer></script>
 </body>
 </html>

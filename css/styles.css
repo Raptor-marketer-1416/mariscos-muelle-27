@@ -3287,6 +3287,8 @@ img.polaroid-photo {
   --rv-radio: var(--radius-lg);
   --rv-fuente: var(--font-body);
   --rv-fuente-titulo: var(--font-display);
+  --rv-panel-fondo: var(--cream);
+  --rv-panel-ancho: 300px;
 }
 .reviews-section .rev-car .rev-count,
 .reviews-section .rev-car .rev-empty { color: var(--parchment); }

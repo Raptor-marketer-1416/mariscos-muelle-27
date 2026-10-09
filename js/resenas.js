@@ -5,7 +5,8 @@
    Busca  <div class="rev-car" data-resenas="URL del Worker" data-maps="URL de la ficha en Google Maps">
    y, cuando la seccion se acerca a la pantalla, pide el JSON al Worker `raptor-resenas`
    (https://resenas.agconsultorweb.com/v1/<slug>.json), pinta las tarjetas con textContent (NUNCA innerHTML)
-   y mantiene al dia las cifras marcadas con data-res (prom, total, stars, todas5, aside5).
+   y mantiene al dia las cifras marcadas con data-res (prom, total, stars, todas5, aside5) y el panel de
+   calificacion .rev-panel (gs = estrellas grandes, etiqueta, dist = barras por estrella, recientes = ultimos 30 dias).
 
    SOLO el comentario de la reseña: NUNCA la respuesta del propietario (estándar de Raptor, Alberto 2026-10-07).
    Condiciones de Google (confirmadas por escrito, 2026-10-05): SIN fotos de resenistas · sin modificar ni filtrar
@@ -27,7 +28,10 @@
       cuenta: function (mostradas, n) { return (mostradas < n ? 'Las ' + mostradas + ' más recientes de ' + n + ' reseñas con comentario' : n + ' reseñas con comentario') + ' · '; },
       verTodas: 'ver todas en Google Maps', pausar: 'Pausar el avance automático', reanudar: 'Reanudar el avance automático',
       anteriores: 'Reseñas anteriores', siguientes: 'Más reseñas', todas5: ', todas de 5 estrellas', aside5: ['Todas de 5 estrellas: f', 'F'],
-      fallo: 'No pudimos cargar las reseñas en este momento. ', leerGoogle: 'Léelas en Google Maps', usuario: 'Usuario de Google'
+      fallo: 'No pudimos cargar las reseñas en este momento. ', leerGoogle: 'Léelas en Google Maps', usuario: 'Usuario de Google',
+      etiqueta: function (p) { return p >= 4.5 ? 'Excelente' : p >= 4 ? 'Muy bueno' : p >= 3.5 ? 'Bueno' : ''; },
+      recientes: function (n) { return n === 1 ? '1 nueva en los últimos 30 días' : n + ' nuevas en los últimos 30 días'; },
+      distFila: function (k, n) { return k + (k === 1 ? ' estrella: ' : ' estrellas: ') + n; }
     },
     en: {
       meses: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -36,7 +40,10 @@
       cuenta: function (mostradas, n) { return (mostradas < n ? 'The ' + mostradas + ' most recent of ' + n + ' reviews with comments' : n + ' reviews with comments') + ' · '; },
       verTodas: 'see all on Google Maps', pausar: 'Pause automatic scrolling', reanudar: 'Resume automatic scrolling',
       anteriores: 'Previous reviews', siguientes: 'More reviews', todas5: ', all 5 stars', aside5: ['All 5 stars: ', ''],
-      fallo: 'We could not load the reviews right now. ', leerGoogle: 'Read them on Google Maps', usuario: 'Google user'
+      fallo: 'We could not load the reviews right now. ', leerGoogle: 'Read them on Google Maps', usuario: 'Google user',
+      etiqueta: function (p) { return p >= 4.5 ? 'Excellent' : p >= 4 ? 'Very good' : p >= 3.5 ? 'Good' : ''; },
+      recientes: function (n) { return n === 1 ? '1 new in the last 30 days' : n + ' new in the last 30 days'; },
+      distFila: function (k, n) { return k + (k === 1 ? ' star: ' : ' stars: ') + n; }
     }
   };
   var lang = ((document.documentElement.lang || 'es').toLowerCase().indexOf('en') === 0) ? 'en' : 'es';
@@ -71,6 +78,33 @@
     if (d.total != null) set('total', function (e) { e.textContent = String(d.total); });
     set('todas5', function (e) { e.textContent = d.todas_5 ? t.todas5 : ''; });
     set('aside5', function (e) { e.textContent = d.todas_5 ? t.aside5[0] : t.aside5[1]; });
+    // ---- panel de calificacion (.rev-panel, 2026-10-09) ----
+    if (isFinite(prom)) {
+      set('gs', function (e) {                                  // estrellas grandes con relleno EXACTO (4.8 => 4.8 de 5)
+        e.style.setProperty('--n', prom);
+        e.setAttribute('aria-label', t.estrellas(prom.toFixed(1)));
+      });
+      set('etiqueta', function (e) {                            // etiqueta honesta segun el promedio real
+        var l = t.etiqueta(prom);
+        e.textContent = l; e.hidden = !l;
+      });
+    }
+    if (d.dist && d.dist_n) {
+      document.querySelectorAll('[data-res="dist"] [data-k]').forEach(function (li) {
+        var k = Number(li.getAttribute('data-k'));
+        var n = Number(d.dist[k] || 0);
+        var barra = li.querySelector('i');
+        if (barra) barra.style.width = (Math.round(n / d.dist_n * 1000) / 10) + '%';
+        var cifra = li.querySelector('.rev-dist-n');
+        if (cifra) cifra.textContent = String(n);
+        li.setAttribute('aria-label', t.distFila(k, n));
+      });
+    }
+    set('recientes', function (e) {                             // solo si hubo resenas en los ultimos 30 dias
+      var n = Number(d.recientes_30 || 0);
+      e.textContent = n > 0 ? t.recientes(n) : '';
+      e.hidden = !(n > 0);
+    });
   }
 
   function crearTarjeta(r, destacada) {
