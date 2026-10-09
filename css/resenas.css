@@ -1,0 +1,111 @@
+/* ============================================================================
+   Carrusel de reseñas de Google — Raptor Marketer   (skill: carrusel-resenas-raptor)
+   Componente AUTOCONTENIDO: se copia al sitio del cliente (css/resenas.css o dentro de su styles.css).
+   Todo usa variables --rv-* CON VALOR POR DEFECTO: el sitio solo define las que quiera cambiar,
+   en el contenedor de la sección o en :root. NO declares aquí los valores del cliente.
+
+   --rv-acento          color de acento del sitio (borde de tarjetas, subrayados, foco)        def #1a73e8
+   --rv-borde           color del borde de cada reseña (por defecto = acento)
+   --rv-fondo           fondo de la tarjeta                                                    def #fff
+   --rv-texto / --rv-texto-2   texto principal / secundario                                    def #1c1c1c / #5b5f5b
+   --rv-oscuro          fondo de la tarjeta destacada, avatar y botones                        def #0a0a0a
+   --rv-oscuro-texto    texto sobre fondo oscuro                                               def #fff
+   --rv-oscuro-texto-2  texto secundario sobre fondo oscuro                                    def rgba(255,255,255,.72)
+   --rv-icono           color de los iconos de flechas/pausa y de la inicial del avatar        def = acento
+   --rv-radio           radio de esquinas                                                      def 16px
+   --rv-fuente          tipografia del texto                                                   def inherit
+   --rv-fuente-titulo   tipografia de la tarjeta destacada y de la cifra grande                def inherit
+   --rv-ancho           ancho de cada tarjeta en escritorio                                    def clamp(215px,28%,258px)
+   --rv-alto-esqueleto  alto reservado mientras cargan las reseñas (evita saltos)              def 332px
+
+   Estrellas de Google: oro #FBBC04 dibujado como IMAGEN (no texto): no depende del contraste de texto.
+   ============================================================================ */
+
+/* ---- estrellas (reseña individual) ---- */
+.rev-car .gs,.rev-resumen .gs{display:block;position:relative;width:90px;height:17px;flex:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 17'%3E%3Cpath fill='%23DADCE0' d='M9 .9l2.5 5.3 5.8.7-4.3 4 1.1 5.7L9 13.7 3.9 16.6 5 10.9.7 6.9l5.8-.7z'/%3E%3C/svg%3E") 0 0/18px 17px repeat-x}
+.rev-car .gs::after,.rev-resumen .gs::after{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(var(--n,5) * 18px);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 17'%3E%3Cpath fill='%23FBBC04' d='M9 .9l2.5 5.3 5.8.7-4.3 4 1.1 5.7L9 13.7 3.9 16.6 5 10.9.7 6.9l5.8-.7z'/%3E%3C/svg%3E") 0 0/18px 17px repeat-x}
+
+/* ---- cifras que el JS mantiene al dia (data-res): en linea aunque el contenedor sea flex ---- */
+span[data-res],.rt{display:inline!important;gap:0}
+
+/* ---- contenedor y pista ---- */
+.rev-car{min-width:0;font-family:var(--rv-fuente,inherit)}
+.rev-car .rev-track{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:.3rem .3rem 1.1rem;margin:-.3rem -.3rem 0;overscroll-behavior-x:contain;scrollbar-width:none;scroll-padding-inline:.3rem;align-items:stretch}
+.rev-car .rev-track::-webkit-scrollbar{display:none}
+.rev-car .rev-track:focus-visible{outline:3px solid var(--rv-acento,#1a73e8);outline-offset:2px;border-radius:var(--rv-radio,16px)}
+
+/* ---- tarjeta ---- */
+.rev-car .rev{flex:0 0 var(--rv-ancho,clamp(215px,28%,258px));scroll-snap-align:start;display:flex;flex-direction:column;margin:0;
+  background:var(--rv-fondo,#fff);color:var(--rv-texto,#1c1c1c);border-radius:var(--rv-radio,16px);padding:1.15rem;
+  border:2px solid var(--rv-borde,var(--rv-acento,#1a73e8));box-shadow:0 8px 24px rgba(12,12,12,.05)}
+.rev-car .rev figcaption{display:flex;align-items:center;gap:.7rem;margin-bottom:.85rem}
+.rev-car .rev .av{position:relative;overflow:hidden;width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:var(--rv-oscuro,#0a0a0a);color:var(--rv-icono,var(--rv-acento,#1a73e8));font-family:var(--rv-fuente-titulo,inherit);font-weight:800}
+.rev-car .rev .av b{font-size:1rem;display:block}
+.rev-car .rev figcaption b{display:block;font-weight:700;font-size:.92rem;overflow-wrap:anywhere}
+.rev-car .rev figcaption span span{display:block;font-size:.78rem;color:var(--rv-texto-2,#5b5f5b)}
+.rev-car .rev .gs{margin:0 0 .75rem}
+.rev-car .rev blockquote{margin:0 0 1rem;flex:1 1 auto}
+.rev-car .rev blockquote p{margin:0;color:inherit;font-size:.94rem;line-height:1.5}
+.rev-car .rev.long blockquote p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden}
+.rev-car .rev.long.open blockquote p{display:block;-webkit-line-clamp:unset}
+.no-js .rev-car .rev.long blockquote p{display:block;-webkit-line-clamp:unset}
+.rev-car .rev-more{align-self:flex-start;margin:-.4rem 0 1rem;padding:.2rem 0;background:none;border:0;border-bottom:2px solid var(--rv-acento,#1a73e8);color:inherit;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
+.rev-car .rev-more:focus-visible{outline:3px solid var(--rv-acento,#1a73e8);outline-offset:3px}
+
+/* ---- tarjeta destacada (la primera, si su texto es corto) ---- */
+.rev-car .rev.hl{background:var(--rv-oscuro,#0a0a0a);color:var(--rv-oscuro-texto,#fff)}
+.rev-car .rev.hl blockquote p{font-family:var(--rv-fuente-titulo,inherit);font-weight:700;font-style:italic;font-size:1.04rem;line-height:1.38}
+.rev-car .rev.hl figcaption span span{color:var(--rv-oscuro-texto-2,rgba(255,255,255,.72))}
+.rev-car .rev.hl .av{background:var(--rv-acento,#1a73e8);color:var(--rv-oscuro,#0a0a0a)}
+.rev-car .rev.hl .rev-more{color:var(--rv-oscuro-texto,#fff)}
+
+/* ---- esqueleto mientras cargan ---- */
+.rev-car .rev.sk{min-height:var(--rv-alto-esqueleto,332px);border-color:transparent;box-shadow:none;
+  background:linear-gradient(100deg,#fff 30%,#eceee8 50%,#fff 70%) 0 0/220% 100%;animation:rvsk 1.5s linear infinite}
+@keyframes rvsk{to{background-position:-220% 0}}
+
+/* ---- controles ---- */
+.rev-car .rev-nav{display:flex;align-items:center;gap:1.1rem;margin-top:.2rem;flex-wrap:wrap}
+.rev-car .rev-count{margin:0;font-size:.88rem;color:var(--rv-texto-2,#5b5f5b)}
+.rev-car .rev-count a,.rev-car .rev-empty a{color:inherit;font-weight:700;text-decoration:underline;text-decoration-color:var(--rv-acento,#1a73e8);text-underline-offset:3px}
+.rev-car .rev-btns{display:flex;gap:.55rem}
+.rev-car .rev-btn{width:44px;height:44px;border-radius:50%;border:0;background:var(--rv-oscuro,#0a0a0a);color:var(--rv-icono,var(--rv-acento,#1a73e8));display:grid;place-items:center;cursor:pointer;transition:transform .2s,opacity .2s}
+.rev-car .rev-btn svg{width:20px;height:20px}
+.rev-car .rev-btn:hover:not(:disabled){transform:scale(1.07)}
+.rev-car .rev-btn:focus-visible{outline:3px solid var(--rv-acento,#1a73e8);outline-offset:3px}
+.rev-car .rev-btn:disabled{opacity:.35;cursor:default}
+.rev-car .rev-pause .i-play{display:none}
+.rev-car .rev-pause.pausado .i-pause{display:none}
+.rev-car .rev-pause.pausado .i-play{display:block}
+.no-js .rev-car .rev-btns{display:none}
+.rev-car .rev-empty{margin:0;padding:1.4rem;border:1px dashed rgba(128,128,128,.5);border-radius:var(--rv-radio,16px);color:var(--rv-texto-2,#5b5f5b)}
+
+/* ---- panel de calificacion (OPCIONAL: cifra grande + estrellas + boton a la ficha) ---- */
+.rev-resumen{position:relative;overflow:hidden;border-radius:calc(var(--rv-radio,16px) + 6px);background:var(--rv-oscuro,#0a0a0a);color:var(--rv-oscuro-texto,#fff);padding:2rem 1.8rem}
+.rev-resumen .rev-num{font-family:var(--rv-fuente-titulo,inherit);font-weight:900;font-size:5.4rem;line-height:.9;letter-spacing:-.03em}
+.rev-resumen .rev-est{font-size:1.45rem;margin-top:.4rem;color:#FBBC04;letter-spacing:.06em}
+.rev-resumen .rev-fuente{display:flex;align-items:center;gap:.55rem;font-weight:700;margin-top:.7rem}
+/* Logo de Google: SIEMPRE el original de 4 colores (marca de Google, no recolorear ni usar en blanco/monocromo); sobre fondo oscuro va en un circulo blanco */
+.rev-resumen .rev-glogo{display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:50%;background:#fff}
+.rev-resumen .rev-glogo svg{width:15px;height:15px;display:block}
+.rev-resumen p{color:var(--rv-oscuro-texto-2,rgba(255,255,255,.72));margin:1rem 0 1.4rem;font-size:.98rem}
+.rev-resumen .rev-boton{display:block;text-align:center;text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;line-height:1.15;
+  padding:.95rem .9rem;border-radius:999px;background:var(--rv-acento,#1a73e8);color:var(--rv-oscuro,#0a0a0a)}
+.rev-resumen .rev-boton:focus-visible{outline:3px solid var(--rv-oscuro-texto,#fff);outline-offset:3px}
+
+/* ---- responsive y movimiento ---- */
+@media (max-width:640px){
+  .rev-car .rev-track{gap:.9rem;margin-inline:calc(var(--gutter,1.1rem) * -1);padding-inline:var(--gutter,1.1rem);scroll-padding-inline:var(--gutter,1.1rem)}
+  .rev-car .rev{flex:0 0 72%}
+  .rev-car .rev-nav{justify-content:center;gap:.8rem}
+  .rev-car .rev-count{font-size:.78rem;order:2;flex:1 0 100%;text-align:center}
+  .rev-resumen .rev-num{font-size:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .rev-car .rev-track{scroll-behavior:auto}
+  .rev-car .rev.sk{animation:none}
+}

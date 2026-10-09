@@ -1,4 +1,4 @@
-# Pozole Jueves y Viernes en Querétaro | Mariscos Muelle 27
+# Pozole de Camarón y Mariscos en Querétaro | Muelle 27
 
 > Pozole de la casa sólo jueves y viernes en Mariscos Muelle 27, Cimatario. Tres tamaños desde $40. Llama al 442 808 5907 antes de que se acabe.
 

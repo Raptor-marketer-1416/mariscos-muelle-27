@@ -21,7 +21,8 @@
   <meta property="og:url" content="https://mariscosmuelle27.com/">
   <meta property="og:image" content="https://mariscosmuelle27.com/img/logo-mariscos-muelle-27.webp">
 
-  <link rel="stylesheet" href="./css/styles.css?v=2f82b136">
+  <link rel="stylesheet" href="./css/styles.css?v=b858bd50">
+  <link rel="stylesheet" href="./css/resenas.css?v=016f22ca">
 
   <!-- Schema JSON-LD: Restaurant + LocalBusiness + FAQPage + WebSite -->
 
@@ -442,9 +443,25 @@
         </div>
       </div>
 
-      <!-- Widget de reseñas Trustindex (full-width, fuera del container) -->
-      <div class="reviews-embed">
-        <script defer src='https://cdn.trustindex.io/loader.js?843dd9d701c6900908067cf3c04'></script>
+      <!-- Carrusel de reseñas de Google (carrusel-resenas-raptor): se llena desde el Worker, sin terceros -->
+      <div class="container reviews-embed">
+      <div class="rev-car" data-resenas="https://resenas.agconsultorweb.com/v1/mariscos-muelle-27.json" data-maps="https://maps.google.com/maps?cid=14616200800993696281">
+        <div class="rev-track" role="region" aria-label="Reseñas de clientes en Google" tabindex="0" aria-busy="true">
+          <figure class="rev sk" aria-hidden="true"></figure>
+          <figure class="rev sk" aria-hidden="true"></figure>
+          <figure class="rev sk" aria-hidden="true"></figure>
+          <figure class="rev sk" aria-hidden="true"></figure>
+        </div>
+        <div class="rev-nav">
+          <div class="rev-btns">
+            <button type="button" class="rev-btn" data-dir="-1" aria-label="Reseñas anteriores" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="rev-btn rev-pause" aria-label="Pausar el avance automático" disabled><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            <button type="button" class="rev-btn" data-dir="1" aria-label="Más reseñas" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <p class="rev-count">Cargando reseñas…</p>
+        </div>
+        <noscript><p class="rev-empty">Lee las reseñas de Mariscos Muelle 27 directamente <a href="https://maps.google.com/maps?cid=14616200800993696281" target="_blank" rel="noopener">en Google Maps</a>.</p></noscript>
+      </div>
       </div>
 
     </section>
@@ -802,5 +819,6 @@
   </div>
 
   <script src="./js/main.js?v=1170bf6f" defer></script>
+  <script src="./js/resenas.js?v=af8a0c0a" defer></script>
 </body>
 </html>

@@ -1952,7 +1952,7 @@ img.polaroid-photo {
 
 .reviews-embed {
   width: 100%;
-  margin: var(--space-md) 0 0;
+  margin: var(--space-md) auto 0;
   min-height: 360px;
   position: relative;
   padding: 0 0.5rem;
@@ -3178,3 +3178,22 @@ img.polaroid-photo {
 .mt-sm { margin-top: var(--space-sm); }
 .mt-md { margin-top: var(--space-md); }
 .mt-lg { margin-top: var(--space-lg); }
+
+/* ===== Carrusel de reseñas propio (carrusel-resenas-raptor) — paleta del muelle ===== */
+.reviews-section {
+  --rv-acento: var(--brass);
+  --rv-fondo: var(--cream);
+  --rv-texto: var(--ink);
+  --rv-texto-2: #5A4636;
+  --rv-oscuro: var(--wood-dark);
+  --rv-oscuro-texto: var(--parchment);
+  --rv-oscuro-texto-2: rgba(245, 230, 211, 0.78);
+  --rv-icono: var(--brass-bright);
+  --rv-radio: var(--radius-lg);
+  --rv-fuente: var(--font-body);
+  --rv-fuente-titulo: var(--font-display);
+}
+.reviews-section .rev-car .rev-count,
+.reviews-section .rev-car .rev-empty { color: var(--parchment); }
+/* el componente oculta pausa/navegación con [hidden]; sin esta regla su display:grid/flex lo anula */
+.reviews-section .rev-car [hidden] { display: none !important; }
